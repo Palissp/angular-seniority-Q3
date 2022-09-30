@@ -1,0 +1,13 @@
+.player-list{
+    display: flex;
+    flex-wrap: wrap;
+    &__title{
+        flex: 100%;
+    }
+    &__header{
+        flex: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+}

@@ -1,0 +1,23 @@
+<app-card>
+    <div class="player-card">
+        <img [src]="player.image" width="200" height="200">
+        <div class="player-card__detail">
+            <div class="player-card__detail-item">
+                <label>Ataque</label>
+                <label>{{player.attack}}</label>
+            </div>
+            <div class="player-card__detail-item">
+                <label>Defensa</label>
+                <label>{{player.defense}}</label>
+            </div>
+            <div class="player-card__detail-item">
+                <label>Skills</label>
+                <label>{{player.skills}}</label>
+            </div>
+        </div>
+        <div class="player-card__actions">
+            <img (click)="editPlayer()" height="30" width="30" src="../assets/edit-icon.svg" />
+            <img (click)="deletePlayer()" height="30" width="30" src="../assets/delete-icon.svg" />
+        </div>
+    </div>
+</app-card>

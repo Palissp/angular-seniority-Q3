@@ -1,0 +1,22 @@
+.player-card {
+    display: flex;
+    flex-direction: column;
+    &__detail {
+        background-color: #505050;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        &-item {
+            color: #fdfdfd;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    &__actions{
+        background-color: #505050;
+        flex: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}

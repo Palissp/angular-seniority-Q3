@@ -1,0 +1,14 @@
+:root {
+    --cardWidth: 240px;
+    --cardHeight: 280px;
+    --cardMargin: 16px;
+}
+
+.card {
+    box-shadow: 10px 11px 19px -2px rgba(115, 105, 105, 0.57);
+    -webkit-box-shadow: 10px 11px 19px -2px rgba(115, 105, 105, 0.57);
+    -moz-box-shadow: 10px 11px 19px -2px rgba(115, 105, 105, 0.57);
+    margin: 0 auto;
+    border-radius: 4px;
+    width: 240px;
+}
