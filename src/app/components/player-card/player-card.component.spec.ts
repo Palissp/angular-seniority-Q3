@@ -1,5 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
+import { PlayersService } from '../../services/players.service';
 import { Player } from '../../config/player.interface';
 
 import { PlayerCardComponent } from './player-card.component';
@@ -19,6 +21,7 @@ const mockPlayer: Player = {
 describe('PlayerCardComponent', () => {
   let component: PlayerCardComponent;
   let fixture: ComponentFixture<PlayerCardComponent>;
+  let service: PlayersService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -32,10 +35,17 @@ describe('PlayerCardComponent', () => {
     fixture = TestBed.createComponent(PlayerCardComponent);
     component = fixture.componentInstance;
     component.player = mockPlayer;
+    service = TestBed.inject(PlayersService);
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('deletes a player', () => {
+    jest.spyOn(service, 'deletePlayer').mockReturnValue(of({}));
+    component.onDelete();
+    expect(service.deletePlayer).toHaveBeenCalled();
   });
 });
