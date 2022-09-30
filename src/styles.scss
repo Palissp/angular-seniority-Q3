@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/cdk/overlay-prebuilt.css';
+
 html body {
   font-family: 'Noto Sans Mono', monospace;
   background-color: var(--background-color);
@@ -7,4 +9,18 @@ html body {
 :root {
   --primary-color: #505050ff;
   --background-color: #e6e6e6ff;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  padding: 5px;
 }

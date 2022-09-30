@@ -1,5 +1,20 @@
 <h1>MI EQUIPO</h1>
-<app-slider [label]="'Puntaje'"></app-slider>
-<img src="../assets/delete-icon.svg" />
-<img src="../assets/edit-icon.svg" />
-<img src="../assets/close-icon.svg" />
+
+<div class="row">
+    <div class="column"><input type="text" name="" id="" style="max-width: 200px;"></div>
+    <div class="colum" style="flex-direction: row-reverse;"><button (click)="showAddPlayer()">Add Player </button>
+    </div>
+</div>
+
+
+
+
+<div class="flex-container">
+    <app-player-data *ngFor="let pl of players" [player]="pl">
+   
+    </app-player-data>
+  </div>
+ 
+
+
+ 
