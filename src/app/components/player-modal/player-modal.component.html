@@ -1,0 +1,87 @@
+<div
+  [id]="idElement"
+  [class]="isModalOpen ? 'modal' : 'none'"
+  tabindex="0"
+  (click)="close()"
+>
+  <div
+    class="modal__box modal__box--{{ size }}"
+    (click)="stopPropagation($event)"
+  >
+    <div class="modal__header modal__header">
+      <h3 class="modal__header--title">{{ modalTitle }}</h3>
+
+      <img
+        src="../assets/close-icon.svg"
+        class="modal__header--close"
+        width="25"
+        (click)="close()"
+      />
+    </div>
+    <div class="modal__body modal__body--{{ size }}">
+      <div>
+        <div
+          *ngIf="!player.image && !playerImage"
+          class="modal__body--empty-image"
+        >
+          Not Found
+        </div>
+        <img
+          *ngIf="player.image || playerImage"
+          [src]="player.image || playerImage"
+          alt="player"
+          class="modal__body--image"
+        />
+      </div>
+      <div [formGroup]="playerForm" class="modal__body__form">
+        <div class="modal__body__form--inputs">
+          <app-input
+            [label]="'Nombre'"
+            ngDefaultControl
+            formControlName="firstName"
+          ></app-input>
+          <app-input
+            [label]="'Apellido'"
+            ngDefaultControl
+            formControlName="lastName"
+          ></app-input>
+          <app-input
+            [label]="'Imagen'"
+            ngDefaultControl
+            formControlName="image"
+          ></app-input>
+          <app-select
+            [label]="'Posición'"
+            [options]="positionsOptions"
+            ngDefaultControl
+            formControlName="idPosition"
+          ></app-select>
+        </div>
+
+        <div class="modal__body__form--sliders">
+          <app-slider
+            [label]="'Ataque'"
+            ngDefaultControl
+            formControlName="attack"
+          ></app-slider>
+          <app-slider
+            [label]="'Defensa'"
+            ngDefaultControl
+            formControlName="defense"
+          ></app-slider>
+          <app-slider
+            [label]="'Skills'"
+            ngDefaultControl
+            formControlName="skills"
+          ></app-slider>
+        </div>
+
+        <div class="modal__body__form--actions">
+          <button (click)="submitForm()" [disabled]="isButtonDisabled">
+            {{ modalButtonText }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
