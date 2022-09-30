@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {PlayerDToInterface} from "../../interfaces/playerDTo.interface";
 
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {PlayerService} from "../../services/player.service";
 
 @Component({
     selector: 'app-create-update-player',
@@ -12,7 +13,9 @@ export class CreateUpdatePlayerComponent implements OnInit {
     @Input() player: PlayerDToInterface | undefined;
     public frmTodo: FormGroup = this.fb.group({   });
 
-    constructor(private readonly fb: FormBuilder) {
+    constructor(private readonly fb: FormBuilder,
+                private readonly playerService: PlayerService,
+                ) {
     }
 
     ngOnInit(): void {
@@ -21,13 +24,13 @@ export class CreateUpdatePlayerComponent implements OnInit {
         //   this.configureForEdit();
         // }
         this.frmTodo = this.fb.group({
-            nombre: [null, [Validators.maxLength(50), Validators.required]],
-            apellido: [null, [Validators.maxLength(50), Validators.required]],
-            imagen: [null, [Validators.maxLength(50), Validators.required]],
-            posicion: [null, [Validators.maxLength(50), Validators.required]],
-            ataque: [null, [Validators.required]],
-            defensa: [null, [Validators.required]],
-            skills: [null, [Validators.required]]
+            nombre: ["", [Validators.maxLength(50), Validators.required]],
+            apellido: ["", [Validators.maxLength(50), Validators.required]],
+            imagen: ["", [Validators.maxLength(50), Validators.required]],
+            posicion: ["", [Validators.maxLength(50), Validators.required]],
+            ataque: [0, [Validators.required]],
+            defensa: [0, [Validators.required]],
+            skills: [0, [Validators.required]]
         });
 
     }
@@ -43,51 +46,15 @@ export class CreateUpdatePlayerComponent implements OnInit {
         this.frmTodo.controls['skills'].setValue(event);
 
     }
-    onClickAdd() {
-        // this.todo.description = this.frmTodo.value.descriptionTodo;
-        // this.todo.status = 0;
-        // this.todo.finish_at = this.frmTodo.value.finishAt;
-        // this.todo.id_author = 16;
-        // console.log(this.todo);
-        // if (this.todoURLParam === 'todo') {
-        //   this.todoService.postNewTodo(this.todo).subscribe(
-        //       (data) => {
-        //         if (data.success) {
-        //           alert('creado exitosamente');
-        //           this.router.navigate(['/']);
-        //         } else {
-        //           alert('Error al crear registro');
-        //           console.error(data);
-        //         }
-        //       },
-        //       (error) => {
-        //         alert('Error al crear registro');
-        //       }
-        //   );
-        //
-        // } else {
-        //   this.todoService.updateTodo(this.todo).subscribe(
-        //       (data) => {
-        //         if (data.success) {
-        //           alert('actualizado exitosamente');
-        //           this.router.navigate(['/']);
-        //         } else {
-        //           alert('Error al actualizar registro');
-        //           console.error(data);
-        //         }
-        //       },
-        //       (error) => {
-        //         alert('Error al actualizar registro');
-        //       }
-        //   );
-        // }
-    }
+
 
     onClickReturn() {
         // this.router.navigate(['/']);
     }
     save(){
-        console.log(this.frmTodo.value);
+        let player:PlayerDToInterface= this.frmTodo.value;
+        player.idAuthor=21;
+        this.playerService.postNewPlayer(player).subscribe(resp=>{console.log("creado")},error => {console.log("error")});
 
     }
 

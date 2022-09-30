@@ -22,6 +22,7 @@ export class PlayerService {
   ) { }
 
   public postNewPlayer(todo: PlayerDToInterface): Observable<PlayerDToInterface> {
+      console.log(todo);
     const body = JSON.stringify(todo);
 
 
