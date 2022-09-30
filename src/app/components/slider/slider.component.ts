@@ -16,7 +16,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class SliderComponent implements ControlValueAccessor {
   @Input()
   public label: string = '';
-  field = '0';
+  field = '50';
 
   constructor() {}
 

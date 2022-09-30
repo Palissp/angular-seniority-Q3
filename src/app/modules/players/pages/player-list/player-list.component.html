@@ -3,7 +3,7 @@
 
     <div class="container__options">
         <input class="container__options__searchbar" type="text" placeholder="Buscar por nombre">
-        <button class="container__options__add-button">Agregar</button>
+        <button class="container__options__add-button" (click)="addPlayer()">Agregar</button>
     </div>
 
     <div class="container__players">
@@ -11,4 +11,8 @@
             <app-player-card></app-player-card>
         </div>
     </div>
+</div>
+
+<div *ngIf="showModal">
+    <app-player-form (sendCloseModal)="listenModalClose($event)"></app-player-form>
 </div>

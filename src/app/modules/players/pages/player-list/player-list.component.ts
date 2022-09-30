@@ -8,6 +8,7 @@ import { PlayerService } from 'src/app/modules/core/services/player/player.servi
 })
 export class PlayerListComponent implements OnInit {
   players = [ 1, 2, 3];
+  showModal: boolean = false;
 
   constructor(
     public playerService: PlayerService,
@@ -15,6 +16,14 @@ export class PlayerListComponent implements OnInit {
 
   ngOnInit(): void {
     this.playerService.getAllPlayers('25').subscribe((data) => console.log('data', data))
+  }
+
+  addPlayer() {
+    this.showModal = true;
+  }
+
+  listenModalClose(event) {
+    this.showModal = event;
   }
 
 }

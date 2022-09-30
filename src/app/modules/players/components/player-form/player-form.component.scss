@@ -1,0 +1,86 @@
+.container {
+  background: white;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0.25rem;
+  top: 50%;
+  left: 50%;
+  padding: 25px;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  z-index: 100;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    &__button {
+      background-color: transparent;
+      border: none;
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+
+    &__image {
+      background-color: #a9a9a9;
+      border-radius: 5px;
+      height: 300px;
+      text-align: center;
+      width: 500px;
+
+      img {
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &__form {
+      margin-left: 5%;
+      width: 100%;
+
+      .form-row {
+        display: flex;
+        align-content: space-between;
+        padding-bottom: 25px;
+
+        &__item {
+          padding-right: 30px;
+          input {
+            border-radius: 5px;
+            padding: 6px 10px;
+            height: 25px;
+            width: 200px;
+          }
+
+          select {
+            height: 40px;
+            width: 220px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+}
+
+.modal-buttons {
+  float: right;
+  margin-left: 3%;
+}
