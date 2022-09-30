@@ -1,0 +1,44 @@
+@font-face {
+	font-family: "PreloSlab-Book";
+	src: url("../assets/fonts/PreloSlab-Book.otf");
+}
+
+@font-face {
+	font-family: "Prelo-SemiBold";
+	src: url("../assets/fonts/Prelo-SemiBold.otf");
+}
+
+@font-face {
+	font-family: "Prelo-Medium";
+	src: url("../assets/fonts/Prelo-Medium.otf");
+}
+
+@font-face {
+	font-family: "PreloSlab-SemiBold";
+	src: url("../assets/fonts/PreloSlab-SemiBold.otf");
+}
+
+@font-face {
+	font-family: "PreloSlab-Bold";
+	src: url("../assets/fonts/PreloSlab-Bold.otf");
+}
+
+@font-face {
+	font-family: "Prelo-Bold";
+	src: url("../assets/fonts/Prelo-Bold.otf");
+}
+
+@font-face {
+	font-family: "Prelo-Book";
+	src: url("../assets/fonts/Prelo-Book.otf");
+}
+
+:root {
+	--PreloSlab-Book: "PreloSlab-Book", sans-serif;
+	--Prelo-SemiBold: "Prelo-SemiBold", sans-serif;
+	--Prelo-Medium: "Prelo-Medium", sans-serif;
+	--PreloSlab-SemiBold: "PreloSlab-SemiBold", sans-serif;
+	--PreloSlab-Bold: "PreloSlab-Bold", sans-serif;
+	--Prelo-Bold: "Prelo-Bold", sans-serif;
+	--Prelo-Book: "Prelo-Book", sans-serif;
+}

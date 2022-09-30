@@ -1,0 +1,52 @@
+<ng-container *ngIf="showInterface; else loading;">
+	<app-page-content>
+		<div class="home">
+			<app-typography variant="h1" color="grey"
+				>{{labels.title | uppercase}}</app-typography
+			>
+			<div class="home__search">
+				<form [formGroup]="searchForm">
+					<app-input
+						ngDefaultControl
+						[errorHelper]="labels.searchInput.errorHelper"
+						[formControlName]="labels.searchInput.formControlName"
+						[fullWidth]="labels.searchInput.fullWidth"
+						[placeholder]="labels.searchInput.placeholder"
+						[size]="labels.searchInput.size"
+						[state]="'error'"
+						[type]="labels.searchInput.type"
+					></app-input>
+				</form>
+				<div class="home__button">
+					<app-button [fullWidth]="true" (click)="isOpenModal = true">
+						{{labels.actionAdd}}
+					</app-button>
+				</div>
+			</div>
+			<div class="home__cards" *ngIf="players.length > 0; else noData">
+				<ng-container *ngFor="let player of players">
+					<app-card
+						[player]="player"
+						(onEdit)="handleEdit(player)"
+						(onDelete)="handleDelete(player.id)"
+					></app-card>
+				</ng-container>
+			</div>
+			<ng-template #noData>
+				<app-typography variant="h3" color="grey"
+					>{{labels.noData}}</app-typography
+				>
+			</ng-template>
+		</div>
+		<ng-container *ngIf="isOpenModal">
+			<app-modal
+				(emitData)="save($event)"
+				(emitDataToEdit)="edit($event)"
+				(cancel)="isOpenModal = false"
+			></app-modal>
+		</ng-container>
+	</app-page-content>
+</ng-container>
+<ng-template #loading>
+	<app-loading [isOpen]="showInterface"></app-loading>
+</ng-template>

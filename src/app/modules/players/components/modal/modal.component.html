@@ -1,0 +1,79 @@
+<div class="modal">
+	<div class="register modal__box">
+		<div class="modal--close" (click)="handleCancel()">
+			<img src="../assets/close-icon.svg" />
+		</div>
+		<app-typography variant="h6" color="grey">
+			{{ labels.title }}
+		</app-typography>
+		<form [formGroup]="registerForm">
+			<div class="form__two">
+				<app-input
+					ngDefaultControl
+					[errorHelper]="labels.nameInput.errorHelper"
+					[label]="labels.nameInput.label"
+					[formControlName]="'name'"
+					[fullWidth]="labels.nameInput.fullWidth"
+					[placeholder]="labels.nameInput.placeholder"
+					[size]="labels.nameInput.size"
+					[state]="'error'"
+					[type]="labels.nameInput.type"
+				></app-input>
+				<app-input
+					ngDefaultControl
+					[errorHelper]="labels.lastInput.errorHelper"
+					[label]="labels.lastInput.label"
+					[formControlName]="'last'"
+					[fullWidth]="labels.lastInput.fullWidth"
+					[placeholder]="labels.lastInput.placeholder"
+					[size]="labels.lastInput.size"
+					[state]="'error'"
+					[type]="labels.lastInput.type"
+				></app-input>
+				<app-input
+					ngDefaultControl
+					[errorHelper]="labels.imageInput.errorHelper"
+					[label]="labels.imageInput.label"
+					[formControlName]="'image'"
+					[fullWidth]="labels.imageInput.fullWidth"
+					[placeholder]="labels.imageInput.placeholder"
+					[size]="labels.imageInput.size"
+					[state]="'error'"
+					[type]="labels.imageInput.type"
+				></app-input>
+				<app-input
+					ngDefaultControl
+					[errorHelper]="labels.positionInput.errorHelper"
+					[label]="labels.positionInput.label"
+					[formControlName]="'position'"
+					[fullWidth]="labels.positionInput.fullWidth"
+					[placeholder]="labels.positionInput.placeholder"
+					[size]="labels.positionInput.size"
+					[state]="'error'"
+					[type]="labels.positionInput.type"
+				></app-input>
+			</div>
+			<app-slider
+				label="Ataque"
+				[formControlName]="'attack'"
+			></app-slider>
+			<app-slider
+				label="Defensa"
+				[formControlName]="'defense'"
+			></app-slider>
+			<app-slider
+				label="Skills"
+				[formControlName]="'skills'"
+			></app-slider>
+			<div class="form--action">
+				<app-button
+					[fullWidth]="false"
+					[disabled]="!registerForm.valid"
+					(clickbutton)="save()"
+				>
+					{{ labels.actionAdd }}
+				</app-button>
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+.home {
+	&__search {
+		margin-top: 32px;
+		display: grid;
+		grid-template-columns: 180px 100px;
+		justify-content: space-between;
+		position: sticky;
+		top: 16px;
+	}
+	&__button {
+		margin-top: 4px;
+		app-button {
+			width: 100%;
+		}
+	}
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 16px;
+	}
+}

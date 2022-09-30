@@ -1,0 +1,42 @@
+<div class="card">
+	<div class="card--image">
+		<img [src]="player.image" alt="image" />
+	</div>
+	<div class="card--name">
+		<app-typography variant="smallText" weight="'bold'">
+			{{ player.firstName | uppercase }} {{ player.lastName | uppercase }}
+		</app-typography>
+	</div>
+	<div class="card--content">
+		<div class="card__info">
+			<div class="card__info--data">
+				<app-typography variant="smallText" color="white">
+					{{ labels.attack }}
+				</app-typography>
+				<app-typography variant="h6" color="white">
+					{{ player.attack }}
+				</app-typography>
+			</div>
+			<div class="card__info--data">
+				<app-typography variant="smallText" color="white">
+					{{ labels.defense }}
+				</app-typography>
+				<app-typography variant="h6" color="white">
+					{{ player.defense }}
+				</app-typography>
+			</div>
+			<div class="card__info--data">
+				<app-typography variant="smallText" color="white">
+					{{ labels.skills }}
+				</app-typography>
+				<app-typography variant="h6" color="white">
+					{{ player.skills }}
+				</app-typography>
+			</div>
+		</div>
+		<div class="card__actions">
+			<img src="../assets/delete-icon.svg" />
+			<img src="../assets/edit-icon.svg" />
+		</div>
+	</div>
+</div>
