@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<div>
+    <input
+        id="filter"
+        [(ngModel)]="filterWord"
+        placeholder="Buscar por nombre"
+      />
+</div>
+<!-- TODO: MODAL -->
+
+<form [formGroup]="formCreatePlayer" (ngSubmit)="createPlayer()">
+    <input type="text" formControlName="firstName" type="text" placeholder="Ingrese Nombre">
+    <input type="text" formControlName="lastName" type="text" placeholder="Ingrese Apellido">
+    <input type="text" formControlName="image" type="text" placeholder="Ingreser url imagen">
+    <input type="number" formControlName="attack" type="text" placeholder="Ataque">
+    <input type="number" formControlName="defense" type="text" placeholder="Defensa">
+    <input type="number" formControlName="skills" type="text" placeholder="Skills">
+    <input type="number" formControlName="idAuthor" type="text" placeholder="idAuthor">
+    <input type="number" formControlName="idPosition" type="text" placeholder="Posicion">
+    <button type="submit" >Crear Jugador</button>
+</form>
+
+<div class="container">
+    <div *ngFor="let player of players | filterList:filterWord">
+        <app-player-card [player]="player"></app-player-card>
+    </div>
+</div>
