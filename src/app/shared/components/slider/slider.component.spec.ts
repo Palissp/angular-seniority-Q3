@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormControl } from '@angular/forms';
-import { findEl, setFieldValue } from '../../spec-helpers/element.spect-helper';
+import { findEl, setFieldValue } from '../../../spec-helpers/element.spect-helper';
 
 import { SliderComponent } from './slider.component';
 
@@ -25,7 +25,7 @@ describe('SliderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ SliderComponent, HostComponent ],
-      imports:[ ],
+      imports:[],
       schemas:[]
     })
     .compileComponents();

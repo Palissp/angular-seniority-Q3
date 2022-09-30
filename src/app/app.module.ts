@@ -4,12 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SliderComponent } from './components/slider/slider.component';
+import { CardPlayerComponent } from './components/cardPlayer/card-player.component';
+import { SliderComponent } from './shared/components/slider/slider.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { PageComponent } from './home/page/page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [AppComponent, SliderComponent],
+  declarations: [AppComponent, SliderComponent, CardPlayerComponent, PageComponent, ModalComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [],
+  providers: [RouterModule],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
