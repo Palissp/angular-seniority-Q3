@@ -1,0 +1,18 @@
+<div class="player">
+    <div class="player__img">
+        <img [src]="player.image">
+    </div>
+
+    <form [formGroup]="form" class="player__data">
+        <app-input class="player__data__item" label="Nombre" [form]="form" [control]="'firstName'"></app-input>
+        <app-input class="player__data__item" label="Apellido" [form]="form" [control]="'lastName'"></app-input>
+        <app-input class="player__data__item" label="Imagen" [form]="form" [control]="'image'"></app-input>
+        <app-select class="player__data__item" [positions]="positions" [form]="form" [control]="'idPosition'" label="Posición"></app-select>
+        <app-slider class="player__data__slider" [label]="'Ataque'" formControlName="attack"></app-slider>
+        <app-slider class="player__data__slider" [label]="'Defensa'" formControlName="defense"></app-slider>
+        <app-slider class="player__data__slider" [label]="'Skill'" formControlName="skills"></app-slider>    
+        <div class="player__data__button">
+            <button (click)="save()" [disabled]="!form.valid">Agregar</button>
+        </div>
+    </form>
+</div>
