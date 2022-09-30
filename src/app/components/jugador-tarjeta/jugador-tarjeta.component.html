@@ -1,0 +1,35 @@
+<div class="ngContent">
+    <ng-content></ng-content>
+</div>
+
+<ul class="cards">
+    <li class="card__body">
+        <img class="card__imgtop" [src]="jugador.image" [alt]="">
+        <h4 class="card__header">{{ jugador.firstName}} {{ jugador.lastName }}</h4>
+        <table class="card__description ">
+            <tr>
+                <td>Ataque</td>
+                <td>Defensa</td>
+                <td>Skills</td>
+            </tr>
+            <tr>
+                <td>{{ jugador.attack }}</td>
+                <td>{{ jugador.defense }}</td>
+                <td>{{ jugador.skills }}</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td><img src="../assets/edit-icon.svg" (click)="editarJugador()" /></td>
+                <td><img src="../assets/delete-icon.svg" (click)="eliminarJugador()" /></td>
+            </tr>
+        </table>
+
+        <!-- <p class="card__description"><small class="text-muted">{{ auto.fabricacion }}</small></p>
+
+        <button class="card__tagline" (click)="verAuto()" type="button" class="btn btn-outline-primary btn-block">
+      Ver más...
+    </button>-->
+    </li>
+</ul>
