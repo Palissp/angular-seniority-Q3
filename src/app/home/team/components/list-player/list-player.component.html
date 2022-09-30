@@ -1,0 +1,43 @@
+<div class="container">
+
+    <h1>MI EQUIPO</h1>
+    <div class="container__search">
+        <div>
+            <input type="text" placeholder="Buscar por nombre" (keyup)="onKeyUp($event)" />
+        </div>
+        <div>
+            <button (click)="add()">Agregar</button>
+        </div>
+    </div>
+
+    <div class="container__card" *ngFor="let item of searchList">
+        <img src="{{item.image}}" alt="Avatar" style="width:100%">
+        <div class="container__cardBody">
+            <label>{{item.firstName}} {{item.lastName}}</label>
+            <div class="container__cardBody-data">
+                <div class="">
+                    <div>Ataque</div>
+                    <div>{{item.attack}}</div>
+                </div>
+                <div class="">
+                    <div>Defensa</div>
+                    <div>{{item.defense}}</div>
+                </div>
+                <div class="">
+                    <div>Skills</div>
+                    <div>{{item.skills}}</div>
+                </div>
+            </div>
+
+            <div class="container__cardBody-actions">
+                <div (click)="clickOnDelete(item.id)">
+                    <img src="../assets/delete-icon.svg" alt="Delete" class="container__cardBody-actionsIcons">
+                </div>
+                <div (click)="clickOnEdit(item)">
+                    <img src="../assets/edit-icon.svg" alt="Edit" style="width:100%"
+                        class="container__cardBody-actionsIcons">
+                </div>
+            </div>
+        </div>
+
+    </div>
