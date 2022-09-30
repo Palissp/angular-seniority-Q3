@@ -1,0 +1,36 @@
+<div class="card" *ngIf="player">
+    <div class="img">
+        <img src="{{player.image}}"
+             alt="NOT FOUND"
+             width="540px"
+             height="614px">
+        <h4 class="full-name">{{player.firstName + ' ' + player.lastName | uppercase}}</h4>
+    </div>
+
+    <div class="card__body">
+        <div class="attr">
+            <h4 class="title">Ataque</h4>
+            <h4 class="content">{{player.attack}}</h4>
+        </div>
+
+        <div class="attr">
+            <h4 class="title">Defensa</h4>
+            <h4 class="content">{{player.defense}}</h4>
+        </div>
+
+        <div class="attr">
+            <h4 class="title">Skills</h4>
+            <h4 class="content">{{player.skills}}</h4>
+        </div>
+    </div>
+
+
+    <div class="card__buttons">
+        <img src="../assets/edit-icon.svg" (click)="showModal = true"/>
+        <img  data-testid="delete" (click)="deletePlayer()" src="../assets/delete-icon.svg"/>
+    </div>
+
+
+</div>
+
+<app-player-form-modal *ngIf="showModal" title="Editar jugador"  (closeModal)="showModal= $event"></app-player-form-modal>

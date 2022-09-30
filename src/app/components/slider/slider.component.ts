@@ -44,4 +44,5 @@ export class SliderComponent implements ControlValueAccessor {
   registerOnTouched(onTouched: Function) {
     this.onTouch = onTouched;
   }
+
 }

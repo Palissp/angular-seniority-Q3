@@ -1,5 +1,5 @@
 <label> {{ label }}</label>
 <div class="input-container">
-  <input type="range" [(ngModel)]="field" data-testid="input"/>
+  <input type="range" [(ngModel)]="field" (ngModelChange)="this.value = $event"  data-testid="input"/>
 <a style="font-size: 1.5rem; width: 10%; padding-left: 5%;">{{field}}</a>
 </div>

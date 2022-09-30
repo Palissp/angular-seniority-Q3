@@ -1,0 +1,64 @@
+.card {
+  border-radius: 15px;
+  background-color: #6E6D70;
+  padding-bottom: 20px;
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+
+    .attr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    img{
+      cursor: pointer;
+    }
+  }
+}
+
+.img {
+  position: relative;
+  text-align: center;
+}
+
+img {
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+h4.full-name {
+  font-weight: bold;
+  color: black;
+  font-size: 40px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h4 {
+  color: white;
+}
+
+h4.title {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+h4.content {
+  margin-top: 0;
+  font-size: 30px;
+}
+
+
