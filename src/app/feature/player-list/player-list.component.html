@@ -1,0 +1,15 @@
+<div class="player-list">
+    <h1 class="player-list__title">MI EQUIPO</h1>
+    <div class="player-list__header">
+        <input class="" type="text" placeholder="Buscar por nombre">
+        <button type="button" (click)="openModal()">Agregar</button>
+    </div>
+    <ng-container *ngFor="let player of players">
+        <app-player-card [player]="player" (edit)="editPlayer($event)" (delete)="deletePlayer($event)">
+        </app-player-card>
+    </ng-container>
+
+    <app-modal title="Agregar jugador" (close)="closeModal()" [show]="showModal">
+        <app-player *ngIf="showModal" [player]="playerSelected"></app-player>
+    </app-modal>
+</div>

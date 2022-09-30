@@ -1,0 +1,32 @@
+.player {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__img {
+        flex: 40%;
+    }
+
+    &__data {
+        flex: 60%;
+        display: flex;
+        flex-wrap: wrap;
+
+        &__item {
+            flex: 50%;
+        }
+
+        &__slider {
+            padding-left: 20px;
+            flex: 100%;
+        }
+
+        &__button {
+            flex: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+    }
+
+
+}
