@@ -1,0 +1,64 @@
+<h1>MI EQUIPO</h1>
+<app-slider [label]="'Puntaje'"></app-slider>
+<img src="../assets/delete-icon.svg" />
+<img src="../assets/edit-icon.svg" />
+<img src="../assets/close-icon.svg" />
+
+
+
+<div class="contenedor">
+    <!--Nuevo jugador-->
+   <div class="cabecera">
+     <h1 class="h1 h1--titulo-lista">
+     Agregar Jugador
+     </h1>   
+
+   </div>
+   <div class="cuerpo-nuevo">
+     <div  class="cuerpo-nuevo__fila-uno">
+       <h1 class="h1 h1--titulo-nuevo-jugador">
+         imagen 
+       </h1>
+     </div>
+     
+     <div  class="cuerpo-nuevo__fila-dos">
+        <div class="cuerpo-nuevo__colum-uno">
+
+            <label class="label label--nuevo-jugador">Nombre:</label>
+            <input class="input input--nuevo-jugador" 
+                  type="text" >
+             <label class="label label--nuevo-jugador">apellido:</label>
+             <input class="input input--nuevo-jugador" 
+                        type="text" >
+        </div>
+        <div class="cuerpo-nuevo__colum-dos">
+            <label class="label label--nuevo-jugador">imagen:</label>     
+            <input class="textarea textarea--nuevo-jugador" 
+                 type="text" > 
+            <label class="label label--nuevo-jugador">Posición:</label>     
+            <select >
+                <option value="">Posición 1</option>
+            </select>  
+
+        </div>
+        <div class="cuerpo-nuevo__colum-tres">
+            <app-slider [label]="'Ataque'"></app-slider>
+            <app-slider [label]="'Defensa'"></app-slider>
+            <app-slider [label]="'Skills'"></app-slider>
+
+        </div>
+
+      
+       
+ 
+       <div class="cuerpo-nuevo__acciones">
+         
+        
+         <button class="button button--guardar" 
+                >
+                 Editar
+         </button>
+       </div>
+     </div>
+   </div>
+ </div>

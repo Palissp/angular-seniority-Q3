@@ -1,0 +1,48 @@
+
+<div class="contenedor">
+    <div class="cabecera">
+        <h1 class="h1 h1--titulo-lista">
+         Mi Equipo
+        </h1>          
+        <input class="input input--buscar" 
+               placeholder="Buscar por nombre"
+               type="text"    
+               [(ngModel)]="nombreJugador"       
+               (keyup.enter)="buscarXNombre()">       
+       
+       <button class="button button--nuevo" (click)="abrirModalJugador()"> Agregar
+        </button>
+        <div class="" *ngIf="modalSwitch">
+            <app-modal-jugador></app-modal-jugador>                
+        </div>
+      </div>
+</div>
+<div class="contenedor">  
+   
+    <div class="cuerpo" *ngFor="let jugador of listaJugadores" >
+      <img class="img img--imagen-jugador"  [src]="jugador.image"><br>
+      <label class="label label--nombre-jugador">
+        {{jugador.firstName}}  {{jugador.lastName }}
+      </label> 
+        <div class="cuerpo_detalle">
+            <div class="cuerpo_detalles-valor">
+                <label for="" class="label label--detalle-jugador" >Ataque</label> <br/>
+                <label for="" class="label label--detalle-jugador" >{{jugador.attack}}</label>
+            </div>
+            <div class="cuerpo_detalles-valor">
+                <label for="" class="label label--detalle-jugador" >Defensa</label><br/>
+                <label for="" class="label label--detalle-jugador" >{{jugador.defense}}</label>
+            </div>
+            <div class="cuerpo_detalles-valor">
+                <label for="" class="label label--detalle-jugador" >Skill</label> <br/>
+                <label for="" class="label label--detalle-jugador" >{{jugador.skills}}</label>
+             </div>
+        </div>   
+      <div class="cuerpo_acciones">  
+     
+          <img src="../assets/edit-icon.svg" />    
+          <img src="../assets/delete-icon.svg"  onclick="eliminarXIdJugador(!jugador.id)"/>
+       
+      </div>
+    </div>
+  </div>
