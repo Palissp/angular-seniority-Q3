@@ -10,10 +10,12 @@ import {MainViewComponent} from './views/main-view/main-view.component';
 import {PlayerCardComponent} from './components/player-card/player-card.component';
 import {ModalComponent} from "./components/modal/modal.component";
 import { PlayerFormComponent } from './components/player-form/player-form.component';
+import { PlayerListComponent } from './components/player-list/player-list.component';
+import { HttpClientModule} from "@angular/common/http";
 
 @NgModule({
-    declarations: [AppComponent, SliderComponent, ComponentDComponent, MainViewComponent, PlayerCardComponent, ModalComponent, PlayerFormComponent],
-    imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+    declarations: [AppComponent, SliderComponent, ComponentDComponent, MainViewComponent, PlayerCardComponent, ModalComponent, PlayerFormComponent, PlayerListComponent],
+    imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
     providers: [],
     bootstrap: [AppComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],

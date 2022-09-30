@@ -1,26 +1,36 @@
 @import "../../../global/breakpoints";
+@import "../../../global/colors";
 
 
 .main-view {
   padding: 48px;
 
   &__header {
-
+    padding-bottom: 32px;
   }
 
   &__controls {
     display: flex;
     justify-content: space-between;
+    padding-top: 16px;
   }
 
   &__search-box {
     border-radius: 8px;
     height: 40px;
     font-size: 16px;
-    &::placeholder {
-      padding: 0 12px;
-    }
+    padding: 0 12px;
 
+
+  }
+
+  &__add {
+    color: white;
+    width: 180px;
+    border-radius: 8px;
+    font-size: 20px;
+    background: $grey;
+    cursor: pointer;
   }
 }
 

@@ -1,9 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { TranslateModule } from '@ngx-translate/core';
 import { ModalComponent } from './modal.component';
-import { EventBusService } from '@pichincha/angular-sdk/eventbus';
 
 describe('ModalComponent', () => {
   let component: ModalComponent;
@@ -11,10 +9,10 @@ describe('ModalComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule.withRoutes([]), TranslateModule.forRoot()],
+      imports: [RouterTestingModule.withRoutes([])],
       declarations: [ModalComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [EventBusService],
+      providers: [],
     }).compileComponents();
   });
 
@@ -28,13 +26,13 @@ describe('ModalComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should close emit onClose event emitter', () => {
+  it('should emit onClose event emitter when close method is called', () => {
     const spy = jest.spyOn(component.onCancel, 'emit');
     component.close();
     expect(spy).toHaveBeenCalled();
   });
 
-  it('should call event stop propagation when modal body is clicked', () => {
+  it('should call stopPropagation ', () => {
     const event = { preventDefault: () => {}, stopPropagation: () => {} };
     const spy = jest.spyOn(event, 'stopPropagation');
     component.stopPropagation(event);
