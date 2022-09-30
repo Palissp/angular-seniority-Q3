@@ -1,0 +1,40 @@
+<div class="content-home">
+    <div class="content-title">
+        <h2>MI EQUIPO</h2>
+    </div>
+    <div class="home-select">
+        <div><input class="search-player" type="text" placeholder="Buscar por nombre"></div>
+        <div>
+        <button class="add-player">
+            <span class="add-text-player">Agregar</span>
+        </button>
+        </div>
+    </div>
+    <div>
+        <div class="cards">
+            <div class="card" *ngFor="let player of listPlayer">
+                <img [src]="player.image" class="card__image" alt="" /> 
+                <div class="card__description">
+                    <div class="player-feature">
+                        <div>
+                            <div><span class="skill-player">Ataque</span></div>
+                            <div class="value-player">{{player.attack}}</div>
+                        </div>
+                        <div>
+                            <div><span class="skill-player">Defensa</span></div>
+                            <div class="value-player">{{player.defense}}</div>
+                        </div>
+                        <div>
+                            <div><span class="skill-player">Skill</span></div>
+                            <div class="value-player">{{player.skills}}</div>
+                        </div>
+                    </div>
+                    <div class="option-player">
+                        <div c><img src="../assets/edit-icon.svg" class="size-option" /></div>
+                        <div><img src="../assets/delete-icon.svg" class="size-option"/></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
