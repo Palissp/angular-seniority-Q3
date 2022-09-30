@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    padding: 15px;
+}
+
+.top-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-content {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 1rem;
+    justify-content: center;
+}

@@ -18,21 +18,14 @@ export class SliderComponent implements ControlValueAccessor {
   public label: string = '';
   field = '0';
 
-  constructor() {}
+  constructor() { }
 
-  onChange: any = () => {};
-  onTouch: any = () => {};
-
-  // sets the value used by the ngModel of the element
-  set value(val: string) {
-    this.field = val;
-    this.onChange(val);
-    this.onTouch(val);
-  }
+  onChange: any = (_: any) => { };
+  onTouch: any = () => { };
 
   // This will will write the value to the view if the the value changes occur on the model programmatically
   writeValue(value: any) {
-    this.value = value;
+    this.field = value;
   }
 
   /* When the value in the UI is changed, this method will invoke a callback function */
