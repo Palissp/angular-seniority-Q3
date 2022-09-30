@@ -8,3 +8,208 @@ html body {
   --primary-color: #505050ff;
   --background-color: #e6e6e6ff;
 }
+
+
+
+*{
+  box-sizing: border-box;
+}
+.contenedor{
+  width: 100%;
+  //width: 300px;
+  padding-top: 20px;
+  background-color:#f7f7f7;
+  display: flex;
+}
+.cabecera{
+  //width: 300px;
+  display: block;
+  margin-bottom: 10px;
+}
+.cuerpo{
+  width: 30%;
+  display: block; 
+  text-align: center;
+  background-color: #505050; 
+  border-radius: 10px 10px 10px 10px;
+  flex-flow: row;
+  &_acciones{
+      width: auto;
+      align-content: center;
+      padding: 10px;
+    }  
+  &_detalle{      
+      width: 33%;
+      align-content: center;
+      padding: 10px; 
+      margin: 10px;    
+      display: flex;
+    }  
+    &_detalles-valor{      
+      width: auto;
+      align-content: center;
+      padding: 10px; 
+      margin: 10px;    
+      display: block;
+    } 
+}
+.cuerpo-nuevo {
+  width: 28%;
+  display: block; 
+  background-color: #ffffff;
+  border-radius: 1px 1px 30px;  
+  &__fila-uno{
+      text-align: center;
+  }
+  &__fila-dos{
+      padding: 5px;
+      text-align: left;
+      display: flex;
+      flex-flow: column;
+  }
+  &__acciones{
+      width: 280px;
+      display: flex;
+      flex-flow: row; 
+  }
+}
+.h1{
+  &--titulo-lista{
+      color: #7b7b7b;
+      font-size: 25px;
+  }
+  &--titulo-nuevo-jugador{
+      color: #7b7b7b;
+      font-size: 25px;
+  }
+}
+.img {
+  &--imagen-jugador{
+      width: 280px;
+      height: 350px;
+      margin: 8px 10px 2.5px 8px ;
+  }
+}
+.svg{
+  width: 15px;
+  height: 15px;
+  &--buscar{
+      position: relative;
+      left: 25px;
+      top: 3px;        
+  };
+  &--editar{
+      position: relative;
+      left: 60px;
+      top: -5px; 
+     
+  };
+  &--eliminar{
+      position: relative;
+      left: 60px;
+      top: -5px; 
+     
+  };
+  &--guardar{
+      position: relative;
+      left: 25px;
+      top: 8px; 
+    
+  };
+  &--cancelar{
+      position: relative;
+      left: 25px;
+      top: 8px; 
+      
+  }
+  &--nuevo{
+      position: relative;
+      left: 25px;
+      top: 3px;     
+  }
+}
+.input {
+  height: 25px;
+  border-color: #f6f6f6 ;
+  &--buscar{
+      width: 60%;
+      border-radius: 3px;
+      border: 1px solid gb(168, 164, 164);
+      background-color: white;
+      padding-left: 25px;
+      
+  }
+  &--nuevo-jugador{
+      margin-bottom: 10px;;
+  }
+}
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px  #7b7b7b;
+}
+.textarea {
+  border-color: #f1f1f1;
+  &--nuevo-jugador{
+      text-align: justify;
+      margin-bottom: 5px;
+  }
+ 
+} 
+.textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px  red;
+}
+.button {
+ 
+  height: 30px;
+  border-radius: 4px;
+  border: 0px;
+  &--nuevo{
+      width: 30%;
+      background-color: #505050;
+      padding-left: 25px;
+      color: white;
+  }
+  &--editar{
+      width: 20%;
+      height: 35px;
+      background-color:#ffffff;
+      padding-left: 25px;
+  }
+  &--eliminar{
+      width: 40%;
+      height: 35px;
+      background-color:#ffffff;
+      padding-left: 25px;
+      
+  }
+  &--guardar{
+      width: 20%;
+      background-color: #505050;
+      padding-left: 25px;
+      color: white;
+  }
+  &--cancelar{
+      width: 40%;
+      background-color: #ed1e24;
+      padding-left: 25px;
+      color: white;
+  }
+}
+.label {
+  &--nombre-jugador{
+      align-content: center;
+      color: white;
+      margin-top: 20px;
+      margin-bottom: 10px;        
+  }
+  &--nuevo-jugador{
+      margin-bottom: 5px;
+      
+  }
+  &--detalle-jugador{
+    margin-bottom: 5px;
+    color: white;
+    
+}
+}

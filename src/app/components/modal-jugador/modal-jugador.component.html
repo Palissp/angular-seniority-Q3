@@ -1,9 +1,3 @@
-<h1>MI EQUIPO</h1>
-<app-slider [label]="'Puntaje'"></app-slider>
-<img src="../assets/delete-icon.svg" />
-<img src="../assets/edit-icon.svg" />
-<img src="../assets/close-icon.svg" />
-
 
 
 <div class="contenedor">
@@ -11,8 +5,9 @@
    <div class="cabecera">
      <h1 class="h1 h1--titulo-lista">
      Agregar Jugador
-     </h1>   
-
+     </h1>  
+      
+     <button (click)="cerrarModal()">Cerrar</button>
    </div>
    <div class="cuerpo-nuevo">
      <div  class="cuerpo-nuevo__fila-uno">
@@ -46,13 +41,10 @@
             <app-slider [label]="'Defensa'"></app-slider>
             <app-slider [label]="'Skills'"></app-slider>
 
-        </div>
-
-      
+        </div>     
        
  
-       <div class="cuerpo-nuevo__acciones">
-         
+       <div class="cuerpo-nuevo__acciones">       
         
          <button class="button button--guardar" 
                 >
@@ -62,3 +54,9 @@
      </div>
    </div>
  </div>
+
+
+
+
+
+

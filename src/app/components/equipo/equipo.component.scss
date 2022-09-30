@@ -1,0 +1,185 @@
+/* You can add global styles to this file, and also import other style files */
+
+  
+  
+  *{
+    box-sizing: border-box;
+  }
+  .contenedor{
+    width: auto;
+    width: 300px;
+    padding-top: 20px;
+    background-color:#f7f7f7;
+    
+  }
+  .cabecera{
+    width: 300px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .cuerpo{
+    width: 300px;
+    display: block; 
+    text-align: center;
+    background-color: black; 
+    border-radius: 1px 1px 30px;
+    &_acciones{
+        width: auto;
+        align-content: center;
+        padding: 10px;
+      }  
+  }
+  .cuerpo-nuevo {
+    width: 280px;
+    display: block; 
+    background-color: #ffffff;
+    border-radius: 1px 1px 30px;  
+    &__fila-uno{
+        text-align: center;
+    }
+    &__fila-dos{
+        padding: 5px;
+        text-align: left;
+        display: flex;
+        flex-flow: column;
+    }
+    &__acciones{
+        width: 280px;
+        display: flex;
+        flex-flow: row; 
+    }
+  }
+  .h1{
+    &--titulo-lista{
+        color: #7b7b7b;
+        font-size: 25px;
+    }
+    &--titulo-nuevo-jugador{
+        color: #7b7b7b;
+        font-size: 25px;
+    }
+  }
+  .img {
+    &--imagen-jugador{
+        width: 280px;
+        height: 350px;
+        margin: 8px 10px 2.5px 8px ;
+    }
+  }
+  .svg{
+    width: 15px;
+    height: 15px;
+    &--buscar{
+        position: relative;
+        left: 25px;
+        top: 3px;        
+    };
+    &--editar{
+        position: relative;
+        left: 60px;
+        top: -5px; 
+       
+    };
+    &--eliminar{
+        position: relative;
+        left: 60px;
+        top: -5px; 
+       
+    };
+    &--guardar{
+        position: relative;
+        left: 25px;
+        top: 8px; 
+      
+    };
+    &--cancelar{
+        position: relative;
+        left: 25px;
+        top: 8px; 
+        
+    }
+    &--nuevo{
+        position: relative;
+        left: 25px;
+        top: 3px;     
+    }
+  }
+  .input {
+    height: 25px;
+    border-color: #f6f6f6 ;
+    &--buscar{
+        width: 60%;
+        border-radius: 3px;
+        border: 1px solid gb(168, 164, 164);
+        background-color: white;
+        padding-left: 25px;
+        
+    }
+    &--nuevo-jugador{
+        margin-bottom: 10px;;
+    }
+  }
+  .input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px  red;
+  }
+  .textarea {
+    border-color: #f1f1f1;
+    &--nuevo-jugador{
+        text-align: justify;
+        margin-bottom: 5px;
+    }
+   
+  } 
+  .textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px  red;
+  }
+  .button {
+   
+    height: 30px;
+    border-radius: 4px;
+    border: 0px;
+    &--nuevo{
+        width: 30%;
+        background-color: #ed1e24;
+        padding-left: 25px;
+        color: white;
+    }
+    &--editar{
+        width: 40%;
+        height: 35px;
+        background-color:#ffffff;
+        padding-left: 25px;
+    }
+    &--eliminar{
+        width: 40%;
+        height: 35px;
+        background-color:#ffffff;
+        padding-left: 25px;
+    }
+    &--guardar{
+        width: 40%;
+        background-color: #ed1e24;
+        padding-left: 25px;
+        color: white;
+    }
+    &--cancelar{
+        width: 40%;
+        background-color: #ed1e24;
+        padding-left: 25px;
+        color: white;
+    }
+  }
+  .label {
+    &--nombre-jugador{
+        align-content: center;
+        color: white;
+        margin-top: 20px;
+        margin-bottom: 10px;        
+    }
+    &--nuevo-jugador{
+        margin-bottom: 5px;
+        
+    }
+  }
