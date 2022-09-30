@@ -1,0 +1,49 @@
+<div class="modal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3>Agregar Jugador</h3>
+            <img src="../assets/close-icon.svg" width="24" height="24" (click)="onClose()" />
+        </div>
+        <div class="modal-body">
+            <img class="modal-body-image" [src]="frm.value.image" />
+            <form [formGroup]="frm">
+                <div class="modal-body-information">
+                    <div class="form-input">
+                        <label>Nombre</label>
+                        <input formControlName="firstName" type="text" name="" id="" class="input-design mt-1"
+                            placeholder="Nombre">
+                        <label *ngIf="!frm?.value.firstName" for="" class="input-error">Falta Nombre</label>
+                    </div>
+                    <div class="form-input mt-1">
+                        <label>Apellido</label>
+                        <input formControlName="lastName" type="text" name="" id="" class="input-design mt-1"
+                            placeholder="Nombre">
+                        <label *ngIf="!frm?.value.lastName" for="" class="input-error">Falta Apellido</label>
+                    </div>
+                    <div class="form-input mt-1">
+                        <label>Imagen</label>
+                        <input formControlName="image" type="text" name="image" id="" class="input-design mt-1"
+                            placeholder="Nombre">
+                        <label *ngIf="!frm?.value.image" for="" class="input-error">Falta Imagen</label>
+                    </div>
+                    <div class="form-input mt-1">
+                        <label>Posicion</label>
+                        <select formControlName="idPosition" type="text" name="" id="" class="input-design mt-1"
+                            placeholder="Nombre">
+                            <option *ngFor="let pos of listPosition" [value]="pos.id">{{pos.description}}</option>
+                        </select>
+                        <label *ngIf="!frm?.value.idPosition" for="" class="input-error">Seleccionar una
+                            Posición</label>
+                    </div>
+                </div>
+                <app-slider formControlName="attack" [label]="'Ataque'" class="pt-1"></app-slider>
+                <app-slider formControlName="defense" [label]="'Defensa'" class="pt-1"></app-slider>
+                <app-slider formControlName="skills" [label]="'Skills'" class="pt-1"></app-slider>
+                <div class="modal-center pt-1">
+                    <button class="btn-primary" (click)="onClickAdd()" [disabled]="!frm.valid">{{player.id ? 'Editar':
+                        'Agregar'}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

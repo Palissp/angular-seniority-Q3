@@ -1,0 +1,31 @@
+.player {
+  &-container {
+    background-color: #6c757d;
+    border-radius: 16px;
+  }
+  &-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+  &-name {
+    text-align: center;
+  }
+  &-information {
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    &-data {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &-options {
+    display: flex;
+    gap: 16px;
+    padding: 8px;
+    justify-content: center;
+  }
+}
