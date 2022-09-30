@@ -1,0 +1,26 @@
+@import "../../../global/breakpoints";
+
+
+.main-view {
+  padding: 48px;
+
+  &__header {
+
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__search-box {
+    border-radius: 8px;
+    height: 40px;
+    font-size: 16px;
+    &::placeholder {
+      padding: 0 12px;
+    }
+
+  }
+}
+
