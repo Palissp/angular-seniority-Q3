@@ -7,6 +7,7 @@ import { PlayerService } from 'src/app/modules/core/services/player/player.servi
   styleUrls: ['./player-list.component.scss']
 })
 export class PlayerListComponent implements OnInit {
+  players = [ 1, 2, 3];
 
   constructor(
     public playerService: PlayerService,

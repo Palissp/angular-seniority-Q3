@@ -1,0 +1,36 @@
+.container {
+  margin: 3%;
+
+  &__options {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+
+    &__searchbar {
+      border: 1px;
+      border-radius: 5px;
+      padding: 6px 20px;
+      height: 35px;
+      width: 15%;
+    }
+
+    &__add-button {
+      background-color: #000000;
+      border-radius: 5px;
+      color: #ffffff;
+      font-size: 20px;
+      padding: 0px;
+      text-align: center;
+      width: 250px;
+    }
+  }
+
+&__players {
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+        
+    }
+}
+}
