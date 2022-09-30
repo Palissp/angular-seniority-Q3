@@ -1,0 +1,22 @@
+.container {
+    padding: 0 24px;
+    &__header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    button {
+        background: #000000;
+        border-radius: 8px;
+        height: 40px;
+        color: white;
+        width: 148px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    &__cards {
+        display: flex;
+        padding-top: 24px;
+        flex-wrap: wrap;
+    }
+}

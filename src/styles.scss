@@ -8,3 +8,17 @@ html body {
   --primary-color: #505050ff;
   --background-color: #e6e6e6ff;
 }
+
+.w-100 {
+  width: 100%;
+}
+
+
+.d-flex {
+  display: flex;
+}
+
+.d-flex-center {
+  justify-content: center;
+  display: flex;
+}

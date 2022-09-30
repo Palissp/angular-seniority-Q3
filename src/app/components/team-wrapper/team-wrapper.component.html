@@ -1,0 +1,30 @@
+<div class="container"> 
+    <h1>MI EQUIPO</h1>
+
+    <div class="container__header">
+        <div><app-search-player></app-search-player></div>
+        <div>
+            <button
+            id="btnAdd"
+            (click)="onClickButtonAdd()"
+            >
+            Agregar
+            </button>
+        </div>
+    </div>
+
+    <div class="container__cards"> 
+        <div *ngFor="let player of listPlayers"> 
+            <app-card-player [player]="player"></app-card-player>
+        </div>
+    </div>
+
+    <!--
+    <app-slider [label]="'Puntaje'"></app-slider>
+    <img src="../assets/delete-icon.svg" />
+    <img src="../assets/edit-icon.svg" />
+    <img src="../assets/close-icon.svg" />-->
+</div>
+
+<app-add-player *ngIf="showModal"></app-add-player>
+

@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormControl } from '@angular/forms';
-import { findEl, setFieldValue } from '../../spec-helpers/element.spect-helper';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/compiler";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { SliderComponent } from './slider.component';
 
 @Component({
@@ -26,7 +26,7 @@ describe('SliderComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ SliderComponent, HostComponent ],
       imports:[ ],
-      schemas:[]
+      schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   });
