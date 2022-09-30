@@ -1,0 +1,78 @@
+@import "../../../global/breakpoints";
+@import "../../../global/colors";
+
+.player-card {
+  width: 500px;
+  margin-bottom: 24px;
+  border-radius: 16px;
+  background: $grey;
+
+
+  &__image-container {
+
+  }
+
+  &__image {
+    width: 500px;
+    height: 500px;
+    border-radius: 16px;
+  }
+
+  &__name {
+    position: relative;
+    top: -87px;
+    text-align: center;
+    height: 51px;
+    font-size: 32px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), white);
+  }
+
+  &__info {
+    display: flex;
+    padding: 0 40px;
+    justify-content: space-between;
+    align-content: center;
+    position: relative;
+    top: -80px;
+  }
+
+  &__attribute {
+
+    &-title {
+      color: white;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    &-value {
+      margin-top: 0;
+      color: white;
+      font-size: 28px;
+      text-align: center;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -60px;
+  }
+
+  &__button{
+    background: $grey;
+    border: none;
+    cursor: pointer;
+    &-edit{
+      margin-right: 64px;
+    }
+    &-erase{
+      margin-left: 64px;
+
+    }
+  }
+
+
+}

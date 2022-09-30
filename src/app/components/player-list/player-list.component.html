@@ -1,0 +1,12 @@
+<div class="player-list row">
+    <div class="player-list__container" *ngFor="let player of playerList">
+        <div class="player-list__player-card col-4" *ngIf="verifyShow(player.firstName, player.lastName)">
+            <app-player-card  class="player-list__player-card" [player]="player" >
+
+            </app-player-card>
+        </div>
+
+    </div>
+
+
+</div>
