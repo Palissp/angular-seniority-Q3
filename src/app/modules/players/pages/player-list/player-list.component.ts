@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from 'src/app/modules/core/services/player/player.service';
 
 @Component({
   selector: 'app-player-list',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerListComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public playerService: PlayerService,
+  ) { }
 
   ngOnInit(): void {
+    this.playerService.getAllPlayers('25').subscribe((data) => console.log('data', data))
   }
 
 }
