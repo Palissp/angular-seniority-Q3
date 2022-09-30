@@ -27,6 +27,7 @@ export class PlayerListComponent implements OnInit {
     this.playerService.getPlayers()?.subscribe()
   }
 
+
   verifyShow(firstName: string, lastName: string) {
     if (this.searchString === "") {
       return true

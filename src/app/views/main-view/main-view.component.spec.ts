@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MainViewComponent } from './main-view.component';
+import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 describe('MainViewComponent', () => {
   let component: MainViewComponent;
@@ -8,7 +9,8 @@ describe('MainViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainViewComponent ]
+      declarations: [ MainViewComponent ],
+      imports: [FormsModule, ReactiveFormsModule]
     })
     .compileComponents();
   });

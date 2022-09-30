@@ -2,7 +2,7 @@ export interface IPlayer {
     attack: number;
     defense: number;
     firstName: string;
-    id: number;
+    id?: number;
     idAuthor: number;
     idPosition: number;
     image: string;

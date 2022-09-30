@@ -42,7 +42,7 @@
     background: rgb(255, 255, 255);
     border-radius: 8px;
     max-height: 100%;
-    width: 688px;
+    width: 80%;
   }
 
 
@@ -51,13 +51,11 @@
     border-radius: 8px 8px 0 0;
     box-sizing: border-box;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     min-height: 56px;
     padding: 16px 32px;
 
-    &__border {
-      box-shadow: 0 8px 8px -8px rgba(7, 7, 7, 0.16);
-    }
+
 
     &__close {
       cursor: pointer;
@@ -69,7 +67,7 @@
   &__body {
     min-height: 70px;
     max-height: calc(100vh - 380px);
-    margin: 40px 8px 40px 32px;
+    margin: 0 8px 40px 32px;
     padding: 0 24px 0 0;
     overflow-y: overlay;
 

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {IPlayer} from "../../interfaces/player.interface";
+import {IPosition} from "../../interfaces/position.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ export class StateService {
 
   public playerSelect$ = new BehaviorSubject<IPlayer | undefined>(undefined);
   public playerList$ = new BehaviorSubject<IPlayer[] | undefined>(undefined);
+  public positionsList$ = new BehaviorSubject<IPosition[] | undefined>(undefined);
 
   constructor() { }
 
@@ -25,6 +27,10 @@ export class StateService {
   }
 
   setPlayerList(value: IPlayer[]) {
-    this.playerList$.next([...value, ...value]);
+    this.playerList$.next(value);
+  }
+
+  setPositionList(value: IPosition[]) {
+    this.positionsList$.next(value)
   }
 }

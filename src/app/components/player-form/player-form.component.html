@@ -2,8 +2,53 @@
         [isModalOpen]="isModalOpen"
         [idElement]="'orderModalContainer'"
         (onCancel)="closeModal()"
+        [title]="title"
 >
-    <p class="modal-body">player form works!!</p>
+    <div class="modal-body player-form row">
+        <div class="col-5">
+            <img alt="NOT FOUND">
+        </div>
+        <div class="col-7">
+            <form [formGroup]="formGroup">
+                <div class="row">
+                    <div class="col-6">
+                        <p>Nombre</p>
+                        <input [formControlName]="'firstName'" class="player-form__input">
+                        <p>Imagen</p>
+                        <input [formControlName]="'image'" class="player-form__input">
+                    </div>
+                    <div class="col-6 player-form__right-column">
+                        <p>Apellido</p>
+                        <input [formControlName]="'lastName'" class="player-form__input">
+                        <p>Posición</p>
+                        <select (change)="setPosition($event.target)" class="player-form__select" name="positions" id="positions">
+                            <option  *ngFor="let position of positionList" [value]="position.id">{{position.description}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row player-form__slider-container">
+                    <app-slider class="player-form__slider" [label]="'Ataque'" [(ngModel)]="attack" name="attack"
+                                [formControlName]="'attack'"></app-slider>
 
+                </div>
+                <div class="row player-form__slider-container">
+                    <app-slider class="player-form__slider" [label]="'Defensa'" [(ngModel)]="defense" name="defense"
+                                [formControlName]="'defense'"></app-slider>
+
+                </div>
+                <div class="row player-form__slider-container">
+                    <app-slider class="player-form__slider" [label]="'Skills'" [(ngModel)]="skills" name="skills"
+                                [formControlName]="'skills'"></app-slider>
+
+                </div>
+                <div class="player-form__controls">
+                    <button (click)="createPlayer()" class="player-form__confirm-button">
+                        Editar
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
 </app-custom-modal>
 

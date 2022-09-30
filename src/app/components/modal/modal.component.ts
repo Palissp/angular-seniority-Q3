@@ -9,6 +9,7 @@ import {environment} from "../../../environments/environment";
 export class ModalComponent {
   @Input() isModalOpen: boolean = true;
   @Input() idElement: string = 'container-modal';
+  @Input() title: string = ""
   @Output() onCancel = new EventEmitter<any>();
 
   public assetsContext = environment.assetsContext;
