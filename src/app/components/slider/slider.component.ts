@@ -1,5 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {CardService} from "../services/card.service";
+import {Player} from "../../interface/player.interface";
+import {Observable,} from "rxjs";
+import {PositionPlayer} from "../../interface/position.interface";
+
 
 @Component({
   selector: 'app-slider',
@@ -17,8 +22,21 @@ export class SliderComponent implements ControlValueAccessor {
   @Input()
   public label: string = '';
   field = '0';
+  players : Player[] = [];
+  positionPlayer : PositionPlayer [] =[];
+  players$:Observable<Player[]>
 
-  constructor() {}
+
+
+  constructor(
+      private cardService: CardService,
+
+  ) {
+    {
+      this.players$ = this.cardService.getPlayers()
+    }
+
+  }
 
   onChange: any = () => {};
   onTouch: any = () => {};
@@ -44,4 +62,47 @@ export class SliderComponent implements ControlValueAccessor {
   registerOnTouched(onTouched: Function) {
     this.onTouch = onTouched;
   }
+
+
+  ngOnInit(): void {
+   // this.activateRoute.params
+    this.getPlayers();
+        //
+        // .pipe(
+        //     switchMap(({id})=> this.cardService.getPlayer(id))
+        // ).subscribe(resp => {console.log(resp);this.players = resp});
+
+  }
+  getPlayers() {
+    this.cardService.getPlayers()
+        .subscribe(players => {
+          this.players = players;
+        })
+  }
+
+  // get bookTitle() {
+  //   return this.players?.firstName
+  //   // return (this.book && this.book.title) ? this.book.title : null
+  // }
+  // get bookId(){
+  //   return this.book?.id
+  // }
+  //
+  // get bookImage() {
+  //   return this.lastName?.image
+  // }
+  //
+  // get bookAuthor() {
+  //   return this.attack?.author
+  // }
+  //
+  // get bookUrl() {
+  //   return this.defense?.url
+  // }
+  //
+  // get bookResume() {
+  //   return this.skills?.resume
+  // }
+
+
 }
