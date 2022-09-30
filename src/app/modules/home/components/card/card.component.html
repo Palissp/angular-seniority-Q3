@@ -1,0 +1,46 @@
+<div class="card" *ngIf="dataPlayer">
+    <img [src]="dataPlayer.image" alt="" class="card__image" appCrashImage>
+    <div class="card__name">{{dataPlayer.firstName + " " + dataPlayer.lastName}}</div>
+    <div class="card__score">
+        <div class="score">
+            <div>Ataque</div>
+            <div>{{dataPlayer.attack}}</div>
+        </div>
+        <div class="score">
+            <div>Defensa</div>
+            <div>{{dataPlayer.defense}}</div>
+        </div>
+        <div class="score">
+            <div>Skills</div>
+            <div>{{dataPlayer.skills}}</div>
+        </div>
+    </div>
+    <div class="card__buttons">
+        <img src="../assets/delete-icon.svg" (click)="deletePlayer(dataPlayer.id)" />
+        <img src="../assets/edit-icon.svg" (click)="updatePlayer(dataPlayer)" />
+    </div>
+</div>
+
+
+<!-- <div class="card">
+    <img [src]="image" alt="" class="card__image">
+    <div class="card__name">Christiano Ronaldo</div>
+    <div class="card__score">
+        <div class="score">
+            <div>Ataque</div>
+            <div>95</div>
+        </div>
+        <div class="score">
+            <div>Defensa</div>
+            <div>34</div>
+        </div>
+        <div class="score">
+            <div>Skills</div>
+            <div>91</div>
+        </div>
+    </div>
+    <div class="card__buttons">
+        <img src="../assets/delete-icon.svg" />
+        <img src="../assets/edit-icon.svg" />
+    </div>
+</div> -->

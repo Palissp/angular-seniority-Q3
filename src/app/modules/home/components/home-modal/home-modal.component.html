@@ -1,0 +1,32 @@
+<div #myModal class="container">
+    <div class="content">
+        <div class="title">
+            <p>{{title}}</p>
+            <img src="../assets/close-icon.svg" (click)="close()" />
+        </div>
+        <br>
+        <form [formGroup]="formPlayer" class="form-group">
+            <label for="">Nombre:</label>
+            <app-input formControlName="firstName" class="form-control" required></app-input>
+            <label for="">Apellido:</label>
+            <app-input formControlName="lastName" class="form-control" required></app-input>
+            <label for="">Imagen:</label>
+            <app-input formControlName="image" class="form-control" required></app-input>
+            <label for="">Posición:</label>
+            <app-input formControlName="idPosition" class="form-control" required></app-input>
+
+
+            <app-slider formControlName="attack" [label]="'Ataque'" class="form-control" required></app-slider>
+            <app-slider formControlName="defense" [label]="'Defensa'" class="form-control" required></app-slider>
+            <app-slider formControlName="skills" [label]="'Skills'" class="form-control" required></app-slider>
+
+            <br />
+            <br />
+            
+            <div class="btn-container">
+                <button (click)="validateForm()" class="btn">Agregar</button>
+            </div>
+        </form>
+        <!-- {{formPlayer.value | json}} -->
+    </div>
+</div>
