@@ -5,9 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { ComponentDComponent } from './components/component-d/component-d.component';
 
 @NgModule({
-  declarations: [AppComponent, SliderComponent],
+  declarations: [AppComponent, SliderComponent, ComponentDComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],

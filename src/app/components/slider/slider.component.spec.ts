@@ -1,7 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import {Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild} from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormControl } from '@angular/forms';
-import { findEl, setFieldValue } from '../../spec-helpers/element.spect-helper';
+import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { SliderComponent } from './slider.component';
 
@@ -20,13 +19,12 @@ class HostComponent {
 describe('SliderComponent', () => {
   let fixture: ComponentFixture<HostComponent>;
   let hostComponent: HostComponent;
-  let labelHostComponent: string;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ SliderComponent, HostComponent ],
-      imports:[ ],
-      schemas:[]
+      imports:[ FormsModule, ReactiveFormsModule ],
+      schemas:[CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });
