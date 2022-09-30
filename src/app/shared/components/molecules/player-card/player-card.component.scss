@@ -1,0 +1,36 @@
+@import "../../../../../assets/scss/util/color-palette.scss";
+.card {
+    background-color: $primaryColor;
+    color: $white;
+    border-radius: 15px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;};
+.card-player {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    background-color: $primaryColor;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    &__stats {
+        background-color: $primaryColor;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &__name {
+        background-color: $primaryColor;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        padding: 20px 50px;
+        border-radius: 15px;
+    }
+    &__actions {
+        background-color: $primaryColor;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        padding: 20px 50px;
+        border-radius: 15px;
+    }
+}

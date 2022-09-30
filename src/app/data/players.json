@@ -1,0 +1,13 @@
+[
+    {
+      "id": 1,
+      "firstName": "Leo",
+      "lastName": "Messi",
+      "image": "https://www.americaeconomia.com/media-library/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNjk4OTcwNS9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY2NTcyODI3MX0.FtAMQnPjZbVBchuEOvW9olRWVBBOFClH2gnjCJH_FO8/image.jpg?width=980",
+      "attack": 60,
+      "defense": 50,
+      "skills": 70,
+      "idAuthor": 1,
+      "idPosition": 1
+    }
+  ]
