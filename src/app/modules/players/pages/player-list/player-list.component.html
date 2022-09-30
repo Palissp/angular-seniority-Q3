@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>MI EQUIPO</h1>
+
+    <div class="container__options">
+        <input class="container__options__searchbar" type="text" placeholder="Buscar por nombre">
+        <button class="container__options__add-button" (click)="addPlayer()">Agregar</button>
+    </div>
+
+    <div class="container__players">
+        <div class="container__players__item" *ngFor="let player of players">
+            <app-player-card></app-player-card>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="showModal">
+    <app-player-form (sendCloseModal)="listenModalClose($event)"></app-player-form>
+</div>

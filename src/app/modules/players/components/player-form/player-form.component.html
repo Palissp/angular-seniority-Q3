@@ -1,0 +1,68 @@
+<div class="modal-overlay" id="modal-overlay"></div>
+
+<div class="container">
+  <div class="container__header">
+    <h3>{{ player !== undefined ? "Editar" : "Agregar" }} jugador</h3>
+
+    <button class="container__header__button" (click)="cancel()">
+      <img src="../assets/close-icon.svg" />
+    </button>
+  </div>
+
+  <div class="container__content">
+    <div class="container__content__image">
+      <!-- NOT FOUND -->
+      <img
+        src="https://media.ambito.com/p/bd92101a7cb18ffb60e4595749c61092/adjuntos/239/imagenes/040/183/0040183765/messi-festejo-argentinajpg.jpg"
+        alt=""
+      />
+    </div>
+    <div class="container__content__form">
+      <form action="" autocomplete="off">
+        <div class="form-row">
+          <div class="form-row__item">
+            <label>Nombre:</label><br />
+            <input type="text" placeholder="Ingrese el nombre del jugador" />
+          </div>
+
+          <div class="form-row__item">
+            <label>Apellido:</label><br />
+            <input type="text" placeholder="Ingrese el apellido del jugador" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-row__item">
+            <label>Imagen:</label><br />
+            <input type="text" placeholder="Ingrese la url de la imagen" />
+          </div>
+
+          <div class="form-row__item">
+            <label>Posicion:</label><br />
+            <select
+              name=""
+              id=""
+              placeholder="Seleccione la posición del jugador"
+            >
+              <option value="1">Opcion 1</option>
+            </select>
+          </div>
+        </div>
+
+        <app-slider [label]="'Ataque'"></app-slider>
+
+        <app-slider [label]="'Defensa'"></app-slider>
+
+        <app-slider [label]="'Skills'"></app-slider>
+
+        <button
+          class="btn btn-global modal-buttons"
+          (click)="submit()"
+          data-test="btn-delete"
+        >
+          {{ player !== undefined ? "Editar" : "Agregar" }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
