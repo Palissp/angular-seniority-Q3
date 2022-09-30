@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-
+import { Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
@@ -18,6 +18,8 @@ export class SliderComponent implements ControlValueAccessor {
   public label: string = '';
   field = '0';
 
+  @Output() field2 = new EventEmitter<string>();
+
   constructor() {}
 
   onChange: any = () => {};
@@ -26,6 +28,7 @@ export class SliderComponent implements ControlValueAccessor {
   // sets the value used by the ngModel of the element
   set value(val: string) {
     this.field = val;
+    this.field2.emit(val);
     this.onChange(val);
     this.onTouch(val);
   }

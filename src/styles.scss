@@ -8,3 +8,45 @@ html body {
   --primary-color: #505050ff;
   --background-color: #e6e6e6ff;
 }
+
+body {
+  margin: 0;
+  width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+
+}
+//@media (min-width: 640px) {
+//  body{
+//    max-width: 640px;
+//    padding-left: 2rem;
+//    padding-right: 2rem;
+//
+//  }
+//}
+//@media (min-width: 768px) {
+//  body{
+//    max-width: 768px;
+//  }
+//}
+//@media (min-width: 1024px) {
+//  body{
+//    max-width: 1024px;
+//    padding-left: 5rem;
+//    padding-right: 5rem;
+//  }
+//}
+//@media (min-width: 1280px) {
+//  body{
+//    max-width: 1280px;
+//  }
+//}
+//@media (min-width: 1536px) {
+//  body{
+//    max-width: 1536px;
+//  }
+//}
