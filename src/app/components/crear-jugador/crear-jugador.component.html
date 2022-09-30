@@ -1,0 +1,29 @@
+<div class="card mt-5" style="padding: 20px;">
+    <form #registerForm="ngForm" (ngSubmit)="crearJugador(registerForm)">
+        <div class="form-group">
+            <label for="firstName">Nombre:</label>
+            <input type="text" #firstName (ngModel)="firstName" name="firstName" id="firstName" class="form-control" placeholder="Nombre jugador">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Apellido :</label>
+            <input type="text" #lastName (ngModel)="lastName" name="lastName" id="lastName" class="form-control" placeholder="Apellido jugador">
+        </div>
+        <div class="form-group">
+            <label for="image">Imagen :</label>
+            <input type="text" #image (ngModel)="image" name="image" id="image" class="form-control" placeholder="URL de la imagen">
+        </div>
+        <div class="form-group">
+            <label for="idPosition">Posicion :</label>
+            <input type="number" #idPosition (ngModel)="idPosition" name="idPosition" id="idPosition" class="form-control">
+        </div>
+        <br>
+        <app-slider [label]="'Ataque'" #attack (ngModel)="attack" name="attack" id="attack" class="form-control"></app-slider>
+        <app-slider [label]="'Defensa'" #defense (ngModel)="defense" name="defense" id="defense" class="form-control"></app-slider>
+        <app-slider [label]="'Skils'" #skills (ngModel)="skills" name="skills" id="skills" class="form-control"></app-slider>
+
+
+        <div class="form-group">
+            <input type="submit" value="Agregar" class="btn btn-primary w-100">
+        </div>
+    </form>
+</div>
