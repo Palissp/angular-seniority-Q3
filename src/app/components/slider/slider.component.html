@@ -1,0 +1,48 @@
+<label> {{ label }}</label>
+<p>
+    <input type="text" (keyup)="filtrar($any($event.target).value)" class="input-container" [(ngModel)]="buscar" data-testid="input" placeholder="Buscar" />
+    <button type="button" (click)="agregarJugador()">Agregar</button>
+</p>
+<div class="input-container">
+
+    <table datatable>
+
+        <tbody>
+            <tr *ngFor="let item of jugadores">
+                <div class="color-fondo ">
+                    <td>
+                        <img src={{item.image}} alt="">
+                        <p> {{item.firstName}} {{item.lastName}}</p>
+                        <tr>
+                            <td>
+                                <p>Ataque</p>
+                                <p>{{item.attack}}</p>
+                            </td>
+                            <td>
+                                <p>Defensa</p>
+                                <p>{{item.defense}}</p>
+                            </td>
+                            <td>
+                                <p>Skills</p>
+                                <p>{{item.skills}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button (click)="editarJugador(item.id)">
+                                <img src="../assets/edit-icon.svg" />
+                              </button>
+                            </td>
+                            <td><img src="../assets/delete-icon.svg" /></td>
+                        </tr>
+
+
+                    </td>
+                </div>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<app-jugador-edit id="modal_1" class="hhidden" [isDialog]="true" [idJugador]="id"></app-jugador-edit>

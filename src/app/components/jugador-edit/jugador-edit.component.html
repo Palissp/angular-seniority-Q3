@@ -1,0 +1,29 @@
+<form [formGroup]="form" #frmJugador="ngForm" (ngSubmit)="aceptar()">
+    <div class="cg-container">
+        <div class="mmodal-body">
+            <table>
+                <tr>
+                    <td>
+                        <img src={{imagenUrl}} alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <p><input type="text" formControlName="nombre" placeholder="Nombre"></p>
+                    <p><input type="text" formControlName="apellido" placeholder="Apellido"></p>
+                    <p><input type="text" formControlName="imagen" placeholder="Url Imagen" (change)="vistaPreviaImg($any($event.target).value)"></p>
+                    <p> <select formControlName="posicion">
+                    <option [ngValue]="null" disabled>Seleccione posicion</option>
+                    <option *ngFor="let p of posiciones" [ngValue]="p.id">{{p.description}}</option>
+                  </select>
+                    </p>
+                </tr>
+
+            </table>
+
+            <button type="submit">agregar</button>
+
+        </div>
+    </div>
+
+    <div class="mmodal-background"></div>
+</form>
