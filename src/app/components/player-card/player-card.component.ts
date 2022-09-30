@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Player } from "../../interfaces";
-// import { HeroService } from "../../services/hero.service";
 
 @Component({
   selector: "app-player-card",
