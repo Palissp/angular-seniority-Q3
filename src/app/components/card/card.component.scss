@@ -1,0 +1,69 @@
+.container {
+    padding: 2px 16px;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    background-color: rgb(22, 22, 22);
+  }
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    border-radius: 16px;
+    // position: relative;
+  }
+
+
+
+
+  .text__center {
+    text-align: center;
+    color: aliceblue;
+  }
+  
+  .container__button {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+  }
+  .button {
+    width: 7rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    i {
+      color: rgb(175, 40, 40);
+    }
+  }
+
+
+  .contenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.centrado{
+    font-size: 24px;
+    color: #ffff;
+    font-weight: bold;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sta__description{
+    font-size: 24px;
+    color: #ffff;
+    text-align: center;
+}
+
+
+
+

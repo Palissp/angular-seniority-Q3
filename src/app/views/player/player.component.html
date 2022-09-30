@@ -1,0 +1,70 @@
+<h1>Mi Equipo</h1>
+
+<div class="container__header">
+    <div class="input-wrapper">
+        <input #in (keyup)="searchKey(in.value)" (change)="searchKey(in.value)" type="text" class="input"
+            placeholder="Buscar por nombre">
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd" />
+        </svg>
+    </div>
+    <button (click)="create()" class="button__header">Agregar</button>
+</div>
+
+<div class="grid">
+    <app-card *ngFor=" let player of playersSearch" [player]="player" (clickEdit)="edit($event)"
+        (clickDelete)="delete($event)">
+
+    </app-card>
+</div>
+
+
+<app-modal [title]="title">
+
+    <form class="card__form" [formGroup]="playerForm" (ngSubmit)="save()" novalidate>
+        <div class="grid__container">
+            <div class="image">
+                <img [src]="" alt="">
+                image
+            </div>
+            <div>
+                <div class="description">
+                    <div>
+                        <label for="hola">Nombre</label>
+                        <input formControlName="firstName" type="text" class="input">
+                    </div>
+                    <div>
+                        <label for="hola">Apellido</label>
+                        <input formControlName="lastName" type="text" class="input">
+                    </div>
+                    <div>
+                        <label for="hola">Imagen</label>
+                        <input formControlName="image" type="text" class="input">
+                    </div>
+                    <div>
+                        <label for="hola">Posicion</label>
+                        <input formControlName="idPosition" type="text" class="input">
+                    </div>
+                </div>
+
+
+
+
+                <app-slider formControlName="attack" [label]="'Ataque'"></app-slider>
+
+                <app-slider formControlName="defense" [label]="'Defensa'"></app-slider>
+
+                <app-slider formControlName="skills" [label]="'Skills'"></app-slider>
+
+                <button type="submit" class="button__header">Guardar</button>
+
+            </div>
+
+
+        </div>
+    </form>
+
+</app-modal>

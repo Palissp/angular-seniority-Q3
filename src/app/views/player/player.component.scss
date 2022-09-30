@@ -1,0 +1,99 @@
+.button__header {
+    background-color: rgb(22, 22, 22);
+    color: aliceblue;
+    width: 9rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    border-color: rgb(15, 15, 15);
+    i {
+      color: white;
+      padding-right: 1rem;
+    }
+  }
+  
+  .button__header_disabled {
+    background-color: rgb(182, 126, 126);
+    color: aliceblue;
+    width: 9rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    border-color: rgb(182, 126, 126);
+    i {
+      color: white;
+      padding-right: 1rem;
+    }
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  .input-wrapper {
+    position: relative;
+    width: 200px;
+  }
+  
+  .input {
+    box-sizing: border-box;
+    color: rgb(107, 105, 103);
+    padding: 15px 15px 15px 35px;
+    width: 100%;
+  }
+  
+  .input-icon {
+    color: rgb(107, 105, 103);
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .container__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+  }
+  
+  .input__container {
+    margin: 1rem;
+  }
+
+  .grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  }
+  .grid__container{
+    display: grid;
+    gap: 1rem;
+    grid-template: "image description"  ;
+  }
+  .image{
+    grid-area: "image";
+    // background-color: red;
+  }
+  .description{
+    grid-area: "description";
+    // background-color: green;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  @media screen and (max-width: 480px){
+    .grid__container{
+      display: grid;
+      gap: 1rem;
+      grid-template: 
+      "image"
+      "description"  ;
+    }
+  }
+
+  // .wrapper {
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr;
+  // }
