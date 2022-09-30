@@ -1,0 +1,24 @@
+<div class="container" *ngIf="player">
+    <img class="img" src="{{player.image}}" alt="NOT FOUND">
+    <div class="text">
+        <div class="title">{{player.firstName+" "+player.lastName}} </div>
+    </div>
+    <div class="gray">
+        <div class="cols">
+            <div class="text-center">Ataque
+                <br/><span>{{player.attack}}</span>
+            </div>
+            <div class="text-center">Defensa
+                <br/><span>{{player.defense}}</span>
+            </div>
+            <div class="text-center">Skills
+                <br/><span>{{player.skills}}</span>
+            </div>
+        </div>
+        <div class="icons">
+            <img (click)="deletePlayer()" class="icon" src="../assets/delete-icon.svg" />
+            <img class="icon" src="../assets/edit-icon.svg" />
+
+        </div>
+    </div>
+</div>

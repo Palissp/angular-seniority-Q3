@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="create-update-player.component.scss">
+<div class="modal">
+    <h2>Agregar Jugador</h2>
+    <div class="closebtn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </div>
+    <div class="flex">
+        <div class="col">
+            <img class="img" *ngIf="player&&player.image" src="{{player.image}}" alt="NOT FOUND">
+            <div class="img__notFound" *ngIf="!player||!player.image">NOT FOUND</div>
+        </div>
+        <div class="col">
+            <form [formGroup]="frmTodo">
+                <div class="gridCols">
+
+                    <div class="">
+                        <label>Nombre</label>
+                        <input
+                                type="text"
+                                formControlName="nombre"
+                                placeholder="Nombre"
+
+                        />
+                    </div>
+                    <div class="">
+                        <label>Apellido</label>
+                        <input
+                                type="text"
+                                formControlName="apellido"
+                                placeholder="Apellido"
+                        />
+                    </div>
+                    <div class="">
+                        <label>Imagen</label>
+                        <input
+                                type="text"
+                                formControlName="imagen"
+                                placeholder="Imagen"
+                        />
+                    </div>
+                    <div class="">
+                        <label>Posicion</label>
+                        <input
+                                type="text"
+                                formControlName="posicion"
+                                placeholder="Posicion"
+                        />
+                    </div>
+                </div>
+
+                <app-slider [label]="'Ataque'" (field2)="setPuntaje($event)"></app-slider>
+                <app-slider [label]="'Defensa'" (field2)="setDefensa($event)"></app-slider>
+                <app-slider [label]="'Skills'" (field2)="setSkills($event)"></app-slider>
+
+
+            </form>
+
+                <button class="btn" (click)="save()">
+                    Agregar
+                </button>
+
+        </div>
+    </div>
+</div>

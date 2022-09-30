@@ -1,0 +1,25 @@
+<h1>MI EQUIPO</h1>
+<div class="header">
+
+    <input
+            class="header__search"
+            type="search"
+            [(ngModel)]="searchText"
+            placeholder="Buscar por nombre"
+            OnKeyUp="searchTask()"
+
+    />
+
+<button class="header__button" (click)="openDialog()">
+    Agregar
+</button>
+</div>
+<main class="grid">
+<app-card *ngFor="let item of listPlayers" [player]="item"></app-card>
+
+</main>
+    <app-create-update-player></app-create-update-player>
+<!--<app-slider [label]="'Puntaje'"></app-slider>-->
+<!--<img src="../assets/delete-icon.svg" />-->
+<!--<img src="../assets/edit-icon.svg" />-->
+<!--<img src="../assets/close-icon.svg" />-->
