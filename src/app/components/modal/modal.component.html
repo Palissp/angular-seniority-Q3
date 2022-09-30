@@ -1,0 +1,28 @@
+<div
+        [id]="idElement"
+        [class]="isModalOpen ? 'modal' : 'none' "
+        tabindex="0"
+        (click)="manageOutsideClick()"
+>
+    <div
+            class="modal__box modal__box"
+            (click)="stopPropagation($event)"
+    >
+        <div>
+
+            <div class="modal__header modal__header__border modal__header">
+                <h2>{{this.title}}</h2>
+                <img
+                        class="modal__header__close"
+                        [src]="assetsContext + '/close-icon.svg'"
+                        alt="error-img"
+                (click)="close()"
+                />
+            </div>
+            <div class="modal__body modal__body">
+                <ng-content select=".modal-body"></ng-content>
+            </div>
+
+        </div>
+    </div>
+</div>

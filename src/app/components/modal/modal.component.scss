@@ -1,0 +1,159 @@
+@import "../../../global/breakpoints";
+
+
+.none {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(74, 74, 80, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__navigator {
+    margin-top: 64px;
+    min-height: 64px;
+    padding: 24px 40px;
+    box-sizing: border-box;
+    background: var(--white);
+    box-shadow: 0 8px 8px -8px rgba(7, 7, 7, 0.16);
+
+    display: none;
+
+  }
+
+  &__divider {
+    padding: 0 8px;
+  }
+
+  &__arrow-back {
+    padding-right: 16px;
+  }
+
+  &__box {
+    min-height: 144px;
+    background: rgb(255, 255, 255);
+    border-radius: 8px;
+    max-height: 100%;
+    width: 80%;
+  }
+
+
+
+  &__header {
+    border-radius: 8px 8px 0 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    min-height: 56px;
+    padding: 16px 32px;
+
+
+
+    &__close {
+      cursor: pointer;
+    }
+
+
+  }
+
+  &__body {
+    min-height: 70px;
+    max-height: calc(100vh - 380px);
+    margin: 0 8px 40px 32px;
+    padding: 0 24px 0 0;
+    overflow-y: overlay;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 100%;
+      border-radius: 4px;
+      background: #e9ecf3;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      height: 44px;
+      border-radius: 5px;
+      background: #b7b7b9;
+    }
+
+
+  }
+
+  &__footer {
+    border-top: 1px solid rgb(236, 236, 236);
+    display: flex;
+    justify-content: flex-end;
+    padding: 24px 32px;
+  }
+
+  &__button {
+    min-width: 196px;
+
+    &:nth-child(2) {
+      margin-left: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .modal {
+    &__box {
+      min-height: 373px;
+      width: 580px;
+    }
+
+    &__body {
+      margin: 40px 8px 40px 24px;
+      padding: 0 16px 0 0;
+    }
+    &__footer {
+      padding: 24px;
+    }
+    &__button {
+      min-width: 196px;
+
+    }
+  }
+
+}
+
+@media screen and (max-width: $sm) {
+  .modal {
+    &__box {
+      max-height: 100%;
+      width: 100% !important;
+      border-radius: 16px 16px 0 0;
+    }
+
+    &__body {
+      max-height: calc(100vh - 286px);
+      margin: 24px 2px 24px 16px;
+      padding: 0 14px 0 0;
+
+      &--hb {
+        max-height: calc(100vh - 100px);
+      }
+    }
+
+    &__footer {
+      padding: 16px;
+    }
+
+    &__button {
+      width: 100% !important;
+      margin-left: 0 !important;
+
+      &:nth-child(1) {
+        margin-top: 16px;
+      }
+    }
+  }
+}

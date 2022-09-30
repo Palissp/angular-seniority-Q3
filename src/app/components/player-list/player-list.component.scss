@@ -1,0 +1,20 @@
+@import "../../../global/breakpoints";
+@import "../../../global/colors";
+@import "../../../global/global";
+
+
+.player-list {
+  justify-content: space-between;
+
+  &__player-card {
+    width: 100%;
+  }
+
+  &__container {
+    justify-content: space-around;
+    display: flex;
+
+    max-width: 100%;
+  }
+}
+

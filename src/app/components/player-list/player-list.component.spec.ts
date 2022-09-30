@@ -1,0 +1,27 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { PlayerListComponent } from './player-list.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
+
+describe('PlayerListComponent', () => {
+  let component: PlayerListComponent;
+  let fixture: ComponentFixture<PlayerListComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ PlayerListComponent ],
+      imports: [HttpClientTestingModule]
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(PlayerListComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

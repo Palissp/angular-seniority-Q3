@@ -1,0 +1,11 @@
+<div class="main-view">
+    <div class="main-view__header">
+        <h1>MI EQUIPO</h1>
+        <div class="main-view__controls">
+            <input class="main-view__search-box" [(ngModel)]="searchString" placeholder="Buscar por nombre">
+            <button class="main-view__add" (click)="openModal()">Agregar</button>
+        </div>
+    </div>
+    <app-player-list [searchString]="searchString"></app-player-list>
+</div>
+<app-player-form (atCloseModal)="closeModal($event)" [isModalOpen]="isModalOpen"></app-player-form>
