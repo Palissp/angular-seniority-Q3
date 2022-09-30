@@ -1,5 +1,22 @@
 <h1>MI EQUIPO</h1>
+<div style="display: grid;">
+    <div style="display: inline-flex;">
+        <div style="width: 70%;">
+            <input type="search" name="busquedaPlayer" placeholder="Buscar">
+        </div>
+        <div style="right: 0px;">
+            <button type="button" (click)="agregarPlayer()">Agregar</button>
+        </div>
+    </div>
+    <app-player-list></app-player-list>
+</div>
+
+<div id="cmpRegistrar" [@agregarModificarRegistro]="currentStateRegistro">
+    <app-datos-player></app-datos-player>
+</div>
+<!--
 <app-slider [label]="'Puntaje'"></app-slider>
 <img src="../assets/delete-icon.svg" />
 <img src="../assets/edit-icon.svg" />
 <img src="../assets/close-icon.svg" />
+-->
