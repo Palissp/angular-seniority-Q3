@@ -1,0 +1,19 @@
+<div class="card">
+    <img [src]="player?.image" alt="John" style="width:100%"> 
+    <h1>{{player?.firstName}}</h1>
+ 
+    <div style="margin: 24px 0;">
+      <div class="row">
+        <div class="column">Ataque</div>
+        <div class="column">Defensa</div>
+      
+        <div class="column">Skills</div>
+      
+      </div>
+    </div>
+    <p>
+        <img src="../assets/delete-icon.svg" />
+<img src="../assets/edit-icon.svg" (click)="showAddPlayer()"/>
+    </p>
+  </div>
+  

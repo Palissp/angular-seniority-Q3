@@ -1,0 +1,35 @@
+<div style="background-color: white;" >
+     <div class="row" style="padding-bottom: 10px;" style="flex-direction: row-reverse;">
+        <img src="../assets/close-icon.svg" />
+    </div>
+
+    <div class='row'>
+        <div class='column'>
+
+            <img [src]="selectedPlayer?.image" alt="Not Found" style="max-width: 300px;">
+
+        </div>
+        <div class='column'>
+            <div class="row" style="padding-bottom: 10px;">
+                <div class="column">Nombre <input [(ngModel)]="selectedPlayer.firstName"></div>
+                <div class="column">Apellido<input type="text"  [(ngModel)]="selectedPlayer.lastName"></div>
+            </div>
+            <div class="row" style="padding-bottom: 10px;">
+                <div class="column"> Imagen<input type="text"  [(ngModel)]="selectedPlayer.image"></div>
+                <div class="column">Posicion<input type="text"  [(ngModel)]="selectedPlayer.idPosition"></div>
+            </div>
+            <div class="row" style="padding-bottom: 10px;">
+                <div class="column">
+                    <app-slider [label]="'Ataque'"></app-slider>
+                    <app-slider [label]="'Defensa'"></app-slider>
+                    <app-slider [label]="'Skills'"></app-slider>
+                </div>
+               
+            </div>
+
+        </div>
+    </div>
+    <div class="column" style="padding-bottom: 10px;" style="align-items: center;">
+       <button (click)="savePlayer()">Editar</button>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<h1>MI EQUIPO</h1>
+
+<div class="row">
+    <div class="column"><input type="text" name="" id="" style="max-width: 200px;"></div>
+    <div class="colum" style="flex-direction: row-reverse;"><button (click)="showAddPlayer()">Add Player </button>
+    </div>
+</div>
+
+
+
+
+<div class="flex-container">
+    <app-player-data *ngFor="let pl of players" [player]="pl">
+   
+    </app-player-data>
+  </div>
+ 
+
+
+ 
