@@ -1,0 +1,10 @@
+<ng-container *ngIf="display$ | async as display">
+    <section [class.open]="display === 'open'" (click)="close()">
+        <div (click)="$event.stopPropagation()">
+            <p class="title">{{title}}</p>
+            <img class="close" (click)="close()" src="../assets/close-icon.svg" />
+
+            <ng-content></ng-content>
+        </div>
+    </section>
+</ng-container>
