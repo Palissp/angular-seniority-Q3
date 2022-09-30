@@ -1,0 +1,25 @@
+.addPlayer {
+    &__data {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-gap: 10px;
+        padding: 14px 12px;
+        color: #1e6395;
+    }
+
+    &__position {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        background-color: #605c5c;
+        color: white;
+    }
+
+    &__label-error {
+        padding: 8px 0 8px 0;
+        font-size: 12px;
+        color: red;
+    }
+}

@@ -1,0 +1,51 @@
+<section class="addPlayer">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="center">{{player?.id ? 'Editar Jugador':'Agregar Jugador'}}</h3>
+            <form [formGroup]="frmPlayer">
+                <div class="addPlayer__data">
+                    <div class="addPlayer__position">
+                        <label>Nombre</label>
+                        <input formControlName="firstName" />
+                        <label *ngIf="!frmPlayer?.value.firstName" class="addPlayer__label-error">Nombre no
+                            válido</label>
+                    </div>
+                    <div class="addPlayer__position">
+                        <label>Apellido</label>
+                        <input formControlName="lastName" />
+                        <label *ngIf="!frmPlayer?.value.lastName" class="addPlayer__label-error">Apellido no
+                            válido</label>
+                    </div>
+                </div>
+
+                <div class="addPlayer__data">
+                    <div class="addPlayer__position">
+                        <label>Imagen</label>
+                        <input formControlName="image" />
+                    </div>
+                    <div class="addPlayer__position">
+                        <label>Posición</label>
+                        <select formControlName="idPosition">
+                            <option>Delantero</option>
+                            <option>Defensa</option>
+                            <option>Arquero</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <app-slider [label]="'Ataque'" formControlName="attack"></app-slider>
+                <app-slider [label]="'Defensa'" formControlName="defense"></app-slider>
+                <app-slider [label]="'Skills'" formControlName="skills"></app-slider>
+
+
+                <button id="saveButton" class="right" type="button" (click)="onClickSaveButton()"
+                    [disabled]="!frmPlayer.valid">{{player?.id ? 'Editar':'Agregar'}}
+                </button>
+
+
+
+            </form>
+        </div>
+    </div>
+</section>
