@@ -1,0 +1,36 @@
+<div class="page-container">
+  <h1>Mi Equipo</h1>
+
+  <div class="search-bar-container">
+    <input
+      type="text"
+      placeholder="Buscar por nombre"
+      name="search"
+      [(ngModel)]="searchPlayerText"
+    />
+    <button type="submit" (click)="showPlayerForm()">Agregar</button>
+  </div>
+
+  <div class="heroes-container">
+    <!-- <app-hero-form
+      *ngIf="isShowingHeroForm"
+      (onSubmitSucces)="onSaveFormSuccess($event)"
+      (onCancel)="hideHeroForm()"
+      [hero]="currentSelectedHero"
+    ></app-hero-form> -->
+    <app-player-card
+      *ngFor="let player of players | filterPlayer: searchPlayerText"
+      [player]="player"
+      (onEmitPlayerToEdit)="setCurrentPlayer($event)"
+      (onEmitPlayerToDelete)="deletePlayer($event)"
+    ></app-player-card>
+    <!-- (onEmitHeroToEdit)="setCurrentHero($event)"
+      (onDeleteSucces)="onDeleteSuccess($event)" -->
+  </div>
+</div>
+<app-player-modal
+  [isModalOpen]="isShowingPlayerForm"
+  [player]="currentSelectedPlayer"
+  (onCancel)="hidePlayerForm()"
+  (onSuccess)="onSubmitFormSuccess()"
+></app-player-modal>

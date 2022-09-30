@@ -1,0 +1,9 @@
+<div class="select-container">
+  <label [for]="idElement">{{ label }}</label>
+
+  <select [id]="idElement" [formControl]="formControl">
+    <option *ngFor="let option of options" [ngValue]="option.id">
+      {{ option.description }}
+    </option>
+  </select>
+</div>
