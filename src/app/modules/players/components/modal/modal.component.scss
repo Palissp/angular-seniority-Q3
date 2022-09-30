@@ -1,0 +1,40 @@
+.modal {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__box {
+		min-height: 363px;
+		background: rgb(255, 255, 255);
+		border-radius: 8px;
+		padding: 32px;
+		width: 70%;
+	}
+	&--close {
+		cursor: pointer;
+		position: absolute;
+		right: 15%;
+		top: 17%;
+		img {
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+.form {
+	&__two {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 0 32px;
+	}
+	&--action {
+		margin-top: 32px;
+		width: 180px;
+		margin: auto;
+	}
+}

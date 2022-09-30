@@ -1,0 +1,68 @@
+<div
+  class="wrapper {{ state }}"
+  [ngClass]="{ fullWidth: fullWidth, error: hasErrors }"
+>
+  <label [for]="id">
+    <div *ngIf="label" class="input__label">
+      <app-typography
+        *ngIf="label !== ''"
+        variant="smallText"
+        color="darkGrey"
+        weight="bold"
+        weight_color="500"
+      >
+        {{ label }}
+      </app-typography>
+    </div>
+
+    <div class="input-container">
+      <input
+        [id]="id"
+        [type]="type"
+        [placeholder]="placeholder"
+        [pattern]="pattern"
+        [attr.maxlength]="maxLength"
+        [autocomplete]="autocomplete"
+        [autofocus]="autofocus"
+        class="{{ size }} {{ styleClass }}"
+        [formControl]="formControl"
+        (keypress)="handleEvent($event)"
+      />
+    </div>
+  </label>
+
+  <div class="wrapper--helper">
+    <ng-container *ngIf="errorHelper || normalHelper">
+      <div class="item" [ngClass]="maxLength ? 'left' : ''">
+        <ng-container *ngIf="hasErrors && errorHelper">
+          <app-typography variant="tinyText" color="error">
+            {{ errorHelper }}
+          </app-typography>
+        </ng-container>
+
+        <ng-container *ngIf="!hasErrors && normalHelper">
+          <app-typography
+            variant="tinyText"
+            color="darkGrey"
+            weight_color="400"
+          >
+            {{ normalHelper }}
+          </app-typography>
+        </ng-container>
+      </div>
+
+      <ng-container *ngIf="showMaxLength && maxLength">
+        <div class="item right">
+          <app-typography
+            variant="tinyText"
+            color="darkGrey"
+            weight_color="400"
+          >
+            {{ inputValue ? inputValue?.toString().length : 0 }}
+            /{{ maxLength }}
+          </app-typography>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
