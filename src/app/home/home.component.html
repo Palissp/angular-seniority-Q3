@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>MI EQUIPO</h1>
+    <div class="container-header">
+        <input type="text" name="" id="" class="input-design" placeholder="Buscar por nombre"
+            (keyup)="onKeyUpSearch($event)">
+        <button class="btn-primary" (click)="onAddPlayer()">Agregar</button>
+    </div>
+    <div class="container-body">
+        <app-player-card *ngFor="let player of listSearch" [player]="player"></app-player-card>
+    </div>
+</div>
+
+<app-modal *ngIf="showModal" (emitClose)="onCloseModal()"></app-modal>

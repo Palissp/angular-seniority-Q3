@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormControl } from '@angular/forms';
-import { findEl, setFieldValue } from '../../spec-helpers/element.spect-helper';
 
 import { SliderComponent } from './slider.component';
 
@@ -24,11 +23,11 @@ describe('SliderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SliderComponent, HostComponent ],
-      imports:[ ],
-      schemas:[]
+      declarations: [SliderComponent, HostComponent],
+      imports: [],
+      schemas: []
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -39,14 +38,14 @@ describe('SliderComponent', () => {
 
   it('change the field value if input changes', () => {
     hostComponent.sliderComponent.writeValue('11');
-    hostComponent.sliderComponent.registerOnTouched(()=> {});
-    hostComponent.sliderComponent.registerOnChange(()=> {});
+    hostComponent.sliderComponent.registerOnTouched(() => { });
+    hostComponent.sliderComponent.registerOnChange(() => { });
     expect(hostComponent.sliderComponent.field).toBe("11");
   });
 
   it("Label must change the component label", () => {
-     hostComponent.label = 'Cambio';
-     fixture.detectChanges();
+    hostComponent.label = 'Cambio';
+    fixture.detectChanges();
     expect(hostComponent.sliderComponent.label).toBe("Cambio");
   });
 
