@@ -1,0 +1,12 @@
+<div id="listaPlayer">
+    <div *ngFor="let player of players">
+        <app-tarjeta 
+            [apellido]="player.lastName"
+            [nombre]="player.firstName"
+            [ataque]="player.attack.toString()"
+            [defensa]="player.defense.toString()"
+            [foto]="player.image.toString()"
+            [skills]="player.skills.toString()"
+        ></app-tarjeta>
+    </div>
+</div>

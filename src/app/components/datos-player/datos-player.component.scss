@@ -1,0 +1,12 @@
+.contenedor{
+    width: 60%;
+    max-width: 600px;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    margin: 20px auto;
+    &_popup_foto{
+        width: 130px;
+        height: 180px;
+    }
+}
