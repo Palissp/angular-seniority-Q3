@@ -1,0 +1,40 @@
+<div class="card">
+    <div>
+        <img class="images" [src]="player.image"/>
+        <h3 class="card__name-player">{{player.firstName}}  {{player.lastName}}</h3>
+    </div>
+
+    <div class="card__description">
+      <div>
+        <label>Ataque</label>
+        <br>
+        <span>{{player.attack}}</span>
+      </div>
+      <div>
+        <label>Defensa</label>
+        <br>
+        <span>{{player.defense}}</span>
+      </div>
+      <div>
+        <label>Skills</label>
+        <br>
+        <span>{{player.skills}}</span>
+      </div>
+    </div>
+
+    <div class="card__actions">
+        <div>
+            <button
+                (click)="onClickButtonEdit()"
+            >
+                <img src="../assets/edit-icon.svg" />
+            </button>
+
+            <button
+                (click)="onClickButtonDelete(player)"
+            >
+                <img src="../assets/delete-icon.svg" />
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+html body {
+  font-family: 'Noto Sans Mono', monospace;
+  background-color: var(--background-color);
+}
+
+:root {
+  --primary-color: #505050ff;
+  --background-color: #e6e6e6ff;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+
+.d-flex {
+  display: flex;
+}
+
+.d-flex-center {
+  justify-content: center;
+  display: flex;
+}

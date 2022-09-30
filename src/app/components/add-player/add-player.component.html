@@ -1,0 +1,54 @@
+<div id="myModal" class="modal container-modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+
+      <p><b>Agregar jugador</b></p>
+      <div class="container-modal__form">
+        <div>
+            <img class="container-modal__imgsize" src="https://www.americaeconomia.com/media-library/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNjk4OTcwNS9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY2NTcyODI3MX0.FtAMQnPjZbVBchuEOvW9olRWVBBOFClH2gnjCJH_FO8/image.jpg?width=980"/>
+        </div>
+        <div  class="w-100">
+            <div>
+              <div class="d-flex">
+                <div class="w-100">
+                    <label>Nombre</label> <br>
+                    <input type="text"/><br>
+                    <span class="container-modal__error">Nombre no válio</span>
+                </div>
+                <div class="w-100">
+                    <label>Apellido</label> <br>
+                    <input type="text"/><br>
+                    <span class="container-modal__error">Apellido no válio</span>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="w-100">
+                    <label>Imagen</label> <br>
+                    <input type="text"/><br>
+                    <span class="container-modal__error">Ingres URL de la imagen</span>
+                </div>
+                <div class="w-100">
+                    <label>Posición</label> <br>
+                    <select name="select">
+                        <option value="delantero" selected>Delantero</option>
+                        <option value="medio" selected>Medio</option>
+                    </select> <br>
+                    <span class="container-modal__error">Seleccione Posición</span>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div>
+                <app-slider [label]="'Ataque'"></app-slider>
+                <app-slider [label]="'Defensa'"></app-slider>
+                <app-slider [label]="'Skills'"></app-slider>
+            </div>
+            <br>
+            <div class="d-flex-center">
+                <button>Editar</button>
+            </div>
+        </div>
+      </div>
+
+    </div>
+</div>
