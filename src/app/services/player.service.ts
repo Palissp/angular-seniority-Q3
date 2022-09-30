@@ -38,13 +38,13 @@ export class PlayerService {
     );
   }
   //
-  // public updatePlayer(todo: Player): Observable<PlayerDToInterface> {
+  // public updatePlayer(todo: PlayerDToInterface): Observable<PlayerDToInterface> {
   //   const body = JSON.stringify(todo);
-  //   return this.http.put<PlayerDToInterface>(`${this.ENPOINT}/${todo.id}`, body, this.httpOptions);
+  //   return this.http.put<PlayerDToInterface>(`${this.ENPOINT}/player/${todo.id}`, body, this.httpOptions);
   // }
   //
-  // public deletePlayer(todo: Player): Observable<PlayerDToInterface> {
-  //   return this.http.delete<PlayerDToInterface>(`${this.ENPOINT}/${todo.id}`, this.httpOptions);
-  // }
+  public deletePlayer(todo: PlayerDToInterface): Observable<PlayerDToInterface> {
+    return this.http.delete<PlayerDToInterface>(`${this.ENPOINT}/player/${todo.id}`, this.httpOptions);
+  }
 
 }
