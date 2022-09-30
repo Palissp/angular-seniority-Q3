@@ -1,0 +1,20 @@
+<h1>AGREGAR AL JUGADOR</h1>
+<form [formGroup]="formPlayer" (submit)="addPlayer()" >
+    <h1>{{btnChange}}</h1>
+    <label>Nombre</label>
+    <input formControlName="firstName" type="text">
+    <small class="alertDanger" *ngIf="firstName.touched && firstName.hasError('required')">
+      Este  campo es requerido
+    </small>
+    <label>Apellido</label>
+    <input formControlName="lastName" type="text">
+    <small class="alertDanger" *ngIf="lastName.touched && lastName.hasError('required')">
+      Este  campo es requerido
+    </small>
+    <label>Imagen</label>
+    <input formControlName="image" type="text">
+    <small class="alertDanger" *ngIf="image.touched && image.hasError('required')">
+      Este  campo es requerido
+    </small>
+    <input id="btnRegister" type="submit" value="{{btnAction}}">
+</form>  

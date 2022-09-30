@@ -1,0 +1,43 @@
+<h1>MI EQUIPO</h1>
+<div class="container">
+    <div>
+        <form autocomplete="off">
+            <input [formControl]="search" 
+            type="text" 
+            placeholder="Ej. Buscar por nombre" 
+            class="input-search">
+        </form>
+    </div>
+    <div>
+        <button [routerLink]="['add-players']">Agregar</button>
+      
+    </div>
+
+</div>
+<ng-container *ngFor="let player of (listOfPlayers$ | async)">
+    <div class="container__card">
+        <!-- <img [src]="imageUrl" alt="Avatar" style="width:100%"> -->
+        <div class="card__title">
+            <h2 class="header header__title"><b>Lionel Mesi</b></h2>
+        </div>
+        <div class="card__info">
+            <div class="card__positions">
+                <div class="position">
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <div class="position">
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <div class="position">
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div>
+            <div class="card__actions"></div>
+        </div>
+    </div>
+</ng-container>
+
+<app-card-player></app-card-player>
