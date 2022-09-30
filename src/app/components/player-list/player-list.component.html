@@ -1,0 +1,26 @@
+<div class="container">
+
+    <div class="container__title">
+        <h1>MI EQUIPO</h1>
+    </div>
+
+    <div class="container__header">
+        <input [(ngModel)]="searchText" type="text" placeholder="Buscar por nombre">
+
+        <button (click)="showModal = true" role="button">Agregar</button>
+
+    </div>
+
+    <div class="container__body">
+
+        <app-player-card *ngFor="let player of playerList$ | async | player:searchText"
+                         [player]=player
+                         (refreshTable)="refreshTable()">
+
+        </app-player-card>
+
+    </div>
+</div>
+
+<app-player-form-modal *ngIf="showModal" title="Agregar jugador" (closeModal)="showModal= $event"></app-player-form-modal>
+
