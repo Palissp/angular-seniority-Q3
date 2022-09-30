@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="img">
+        <img class="image" src="{{src}}">
+        <p class="title">{{title}}</p>
+    </div>
+    <div class="content">
+        <table class="table">
+            <tr>
+                <td>
+                    Ataque
+                </td>
+                <td>
+                    Defensa
+                </td>
+                <td>
+                    Skills
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 30px; font-weight: bold;text-align: center;">
+                    {{attack}}
+                </td>
+                <td style="font-size: 30px; font-weight: bold;text-align: center;">
+                    {{defense}}
+                </td>
+                <td style="font-size: 30px; font-weight: bold;text-align: center;">
+                    {{skills}}
+                </td>
+            </tr>
+        </table>
+        <table class="table">
+            <tr>
+                <td>
+                    <button (click)="onClickEdit($event)" style="background-color: #505050; border: none; cursor: pointer" type="button"><img src="assets/edit-icon.svg"></button>
+                </td>
+                <td>
+                    <button (click)="onClickDelete($event)" style="background-color: #505050; border: none; cursor: pointer" type="button"><img src="assets/delete-icon.svg"></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

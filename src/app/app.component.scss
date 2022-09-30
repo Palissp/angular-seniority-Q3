@@ -1,0 +1,22 @@
+.container{
+  padding: 25px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 50%;
+  max-width: initial;
+  height: 50%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding: 0px;
+  background: white;
+
+  .large-modal.header {
+    float: right;
+  }
+}
