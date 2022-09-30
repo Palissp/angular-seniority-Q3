@@ -8,11 +8,12 @@ import { CardPlayerComponent } from './components/cardPlayer/card-player.compone
 import { SliderComponent } from './shared/components/slider/slider.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { PageComponent } from './home/page/page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent, SliderComponent, CardPlayerComponent, PageComponent, ModalComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [],
+  providers: [RouterModule],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
