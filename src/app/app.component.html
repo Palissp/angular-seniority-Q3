@@ -1,0 +1,107 @@
+<div class="container">
+    <h1>MI EQUIPO</h1>
+    <!--<app-slider [label]="'Puntaje'"></app-slider>-->
+    <!--<img src="../assets/delete-icon.svg" />-->
+    <!--<img src="../assets/edit-icon.svg" />-->
+    <!--<img src="../assets/close-icon.svg" />-->
+
+    <!--<app-card></app-card>-->
+    <div>
+        <input style="border-radius: 10px; height: 20px; padding: 10px" placeholder="Buscar por nombre"
+            [(ngModel)]="buscador" (change)="buscar()"
+        >
+        <button style="border-radius: 10px;padding: 10px; background-color: black; color: white; margin-left: 50px"
+            (click)="openModal()"
+        >
+            Agregar</button>
+    </div>
+
+
+    <div class="cards" style="margin-top: 40px">
+        <app-card *ngFor="let player of players" style="margin-bottom: 25px"
+                  [title]="player.firstName + ' ' +  player.lastName"
+                  [attack]="player.attack"
+                  [defense]="player.defense"
+                  [skills]="player.skills"
+                  [src]="player.image"
+                  (onClickDeleteEvent)="deletePlayer(player.id)"
+        ></app-card>
+    </div>
+</div>
+
+<div #modal class="modal">
+    <div class="content">
+        <div class="large-modal header">
+            <button (click)="closeModal()" style="background-color: white; border: none; cursor: pointer" type="button"><img src="assets/close-icon.svg"></button>
+        </div>
+        <div style="padding: 20px">
+            <form [formGroup]="frmPlayer">
+                <table>
+                    <tr>
+                        <td>
+                            <input
+                                    style="border-radius: 10px; width: 200px; height: 20px; padding: 10px"
+                                    type="text"
+                                    placeholder="Nombre"
+                                    formControlName="firstName">
+                        </td>
+                        <td>
+                            <input
+                                    style="border-radius: 10px; width: 200px; height: 20px; padding: 10px"
+                                    type="text"
+                                    placeholder="Apellido"
+                                    formControlName="lastName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input
+                                    style="border-radius: 10px; width: 200px; height: 20px; padding: 10px"
+                                    type="text"
+                                    placeholder="Imagen"
+                                    (change)="chargeImage()"
+                                    formControlName="image">
+                        </td>
+                        <td>
+                            <select style="border-radius: 10px; width: 200px; padding: 10px" formControlName="position">
+                                <option *ngFor="let position of positions" [value]="position.id">{{position.description}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input
+                                    style="border-radius: 10px; width: 400px; height: 20px; padding: 10px"
+                                    type="number"
+                                    placeholder="Ataque"
+                                    formControlName="attack">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input
+                                    style="border-radius: 10px; width: 400px; height: 20px; padding: 10px"
+                                    type="number"
+                                    placeholder="Defensa"
+                                    formControlName="defense">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input
+                                    style="border-radius: 10px; width: 400px; height: 20px; padding: 10px"
+                                    type="number"
+                                    placeholder="Skills"
+                                    formControlName="skills">
+                        </td>
+                        <td>
+                            <img style="width: 15%; height: 15%; padding-left: 15px" [src]="img" alt="">
+                        </td>
+                    </tr>
+                </table>
+                <button (click)="savePlater()" style="margin-top: 25px; color: white; border-radius: 10px; font-size: 20px; background-color: #505050" type="button">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
