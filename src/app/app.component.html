@@ -1,5 +1,15 @@
+<div class="w3-container">
+
 <h1>MI EQUIPO</h1>
-<app-slider [label]="'Puntaje'"></app-slider>
+<div> 
+    <input type="text" placeholder="Buscar por nombre" name="search" style="margin: 30px;">
+    <button class="button button1" (click)="add()">Agregar</button>
+</div>
+<!--<app-slider [label]="'Puntaje'"></app-slider>
 <img src="../assets/delete-icon.svg" />
 <img src="../assets/edit-icon.svg" />
-<img src="../assets/close-icon.svg" />
+<img src="../assets/close-icon.svg" />-->
+<app-card-jugador [listaJugadores]="listaJugadores" ></app-card-jugador>
+</div>
+
+
