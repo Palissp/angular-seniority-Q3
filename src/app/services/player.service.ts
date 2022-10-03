@@ -9,7 +9,7 @@ import { Player } from '../models/player';
 export class PlayerService {
 
   private Url = 'https://api-exercise-q3.herokuapp.com/player';
-  private IdAutor = 8;
+ 
 
   private readonly ID_AUTOR = '8';
   private readonly ENPOINT = 'https://api-exercise-q3.herokuapp.com';
