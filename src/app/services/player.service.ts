@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Player } from '../models/player';
 
@@ -11,22 +11,34 @@ export class PlayerService {
   private Url = 'https://api-exercise-q3.herokuapp.com/player';
   private IdAutor = 8;
 
+  private readonly ID_AUTOR = '8';
+  private readonly ENPOINT = 'https://api-exercise-q3.herokuapp.com';
+
   constructor(private http: HttpClient) { }
+  playerToEdit = new BehaviorSubject<Player | null>(null);
 
-  getPLayers():Observable<Player []>{
-      return this.http.get<Player []>(`${this.Url}?idAuthor=${this.IdAutor}`);
+
+  
+  getPLayers(): Observable<Player[]>{    
+    const url = `${this.ENPOINT}/player`;
+    return this.http.get<Player[]>(url, {headers :{
+      'author': this.ID_AUTOR
+    }});
   }
 
-  postPlayer(player:Player):Observable<Player> {
-    return this.http.post<Player>(`${this.Url}?idAuthor=${this.IdAutor}`,player);
+
+ 
+  deletePlayer(playerId: number):Observable<any>{
+    return this.http.delete(`${this.Url}/${playerId}`);    
+  }
+  createPlayer(player: Player){
+    return this.http.post(`${this.Url}/`, {...player, idAuthor: this.ID_AUTOR});
   }
 
-  updatePlayer(id:(string | undefined), player:Player):Observable<any>{
-    return this.http.post(`${this.Url}/${id}?idAuthor=${this.IdAutor}`, player);    
+  editPlayer(player: Player){
+    return this.http.patch(`${this.Url}/${player.id}`, player);
   }
 
-  deletePlayer(id:(string | undefined) ):Observable<any>{
-    return this.http.delete(`${this.Url}/${id}?idAuthor=${this.IdAutor}`);    
-  }
+ 
   
 }

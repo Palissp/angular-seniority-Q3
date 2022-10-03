@@ -13,11 +13,13 @@ export class AppComponent {
   bandera:boolean;
   title = 'jest-angular';
   players: Player[] = [];
+  busquedaNombre:string;
 
   playerForm:FormGroup = new FormGroup({});
   formBuilder:FormBuilder = new FormBuilder();
 
   player: Player =  {
+    id:20,
     firstName:	'Christiano',
     lastName:	'Ronaldo',
     image:	'https://www.americaeconomia.com/media-library/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNjk4OTcwNS9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY2NTcyODI3MX0.FtAMQnPjZbVBchuEOvW9olRWVBBOFClH2gnjCJH_FO8/image.jpg?width=980',
@@ -43,6 +45,7 @@ export class AppComponent {
   constructor(private servicio: PlayerService) {
     this.nuevo = false;
     this.bandera = false;
+    this.busquedaNombre='';
 
   }
 
@@ -64,17 +67,22 @@ export class AppComponent {
     });
   }
 
-  addPlayer()
+  addPlayer1()
   {
     this.nuevo = true;
     this.bandera = true;
   }
   submitPlayer(){
 
-    this.servicio.postPlayer(this.player).subscribe((nuevoPlayer:Player) => 
-    this.players.push(nuevoPlayer));
+   // this.servicio.postPlayer(this.player).subscribe((nuevoPlayer:Player) => 
+    //this.players.push(nuevoPlayer));
   }
 
   editPlayer(player:Player){}
   deletePlayer(player:Player){}
+
+  addPlayer(){
+    this.servicio.playerToEdit.next(null);
+    document.getElementById('newPlayer')!.style.display = 'block';
+  }
  }

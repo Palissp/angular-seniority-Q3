@@ -1,21 +1,24 @@
 <div class="contenedor">
 <h1>MI EQUIPO</h1>
 
-<div>
-    <tr>
-        <td class="input-icono">
-            <input class="input" type="text" name="buscar" placeholder="Buscar por nombre">
-        </td>
-        <td>
+<div class="cabecera">
+    
+        <div class="columna">
+            <input class="input" type="text" name="buscar" placeholder="Buscar por nombre" [(ngModel)]="busquedaNombre">
+        </div>
+        <div class="columna">
             <button class="button" (click)="addPlayer()">Agregar</button>
-        </td>
+        </div>
         
-    </tr>
+    
 </div>
 
-<div>
-    <div class="cuerpo-tarjeta" *ngFor="let player of players let i=index">
-        <div class="cuerpo-foto">
+<div >
+    <div class="d-flex-between c-gap" *ngFor="let player of players | filtroPorNombre:busquedaNombre  let i=index">
+
+        <app-player-card  [player]="player"></app-player-card>
+
+        <!--<div class="cuerpo-foto">
             <img width="360px" height="360px" src={{player.image}}>
         </div>
         <div>
@@ -36,7 +39,7 @@
             <button  (click)="editPlayer(player)"><img height ="15"src="../assets/edit-icon.svg" /></button>
             <button  (click)="deletePlayer(player)"><img height ="15" src="../assets/delete-icon.svg" /></button>
         </div>
-    </div>
+    </div>-->
 </div>
 
 
@@ -85,3 +88,4 @@
 <img src="../assets/close-icon.svg" />
 
 </div>
+<app-player-modal class="modal" id="newPlayer"></app-player-modal>

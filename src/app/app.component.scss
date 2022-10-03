@@ -3,7 +3,23 @@
     border: 1px solid rgba(209, 206, 206, 0.732);
     padding: 40px 20px 20px 20px;
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 400px;
+   
+  }
+  .cabecera{
+    background-color: rgb(245, 247, 245);
+    border: 1px solid rgba(209, 206, 206, 0.732);
+    padding: 40px 20px 20px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+   
+    display:flex;
+  }
+
+  .columna{
+    background-color: rgb(245, 247, 245);
+    border: 1px solid rgba(209, 206, 206, 0.732);    
+    font-family: Arial, Helvetica, sans-serif;
+    width: 50%;
+    
   }
 
   .subcontenedor {
@@ -34,6 +50,7 @@
     padding: 0px 0px 10px 0px;
     
     border-radius: 25px;
+  
     //border: 10px solid rgba(209, 209, 206, 0.732);
   }
 
@@ -70,7 +87,7 @@
   }
 
   .button {
-    background-color: #fc121e;
+    background-color: #3b3939;
     border: none;
     color: white;
     text-align: center;
