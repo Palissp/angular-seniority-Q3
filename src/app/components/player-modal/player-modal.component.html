@@ -1,0 +1,57 @@
+<div class="modal-content">
+    <div class="d-flex-between">
+        <h2>{{playerToEdit ? 'Editar jugador' : 'Agregar jugador'}}</h2>
+        <img class="close-btn" src="../assets/close-icon.svg" (click)="onClose()" />
+    </div>
+    <div class="d-flex-between">
+        <img class="player-image"
+            [src]="playerForm.value.image" (error)="onImgError($event)" />
+        <form class="player-form" [formGroup]="playerForm">
+            <div class="d-flex-evenly mb-3">
+                <div class="d-flex-column">
+                    <label for="player-fname">Nombre:</label>
+                    <input type="text" class="input"
+                        [ngClass]="{'invalid-input': playerForm.controls['firstName'].invalid && playerForm.controls['firstName'].touched}"
+                        id="player-fname" formControlName="firstName">
+                    <span *ngIf="playerForm.controls['firstName'].invalid && playerForm.controls['firstName'].touched"
+                        class="error-message">Campo no válido</span>
+                </div>
+                <div class="d-flex-column">
+                    <label for="player-lname">Apellido:</label>
+                    <input type="text" class="input" id="player-lname" formControlName="lastName"
+                        [ngClass]="{'invalid-input': playerForm.controls['firstName'].invalid && playerForm.controls['firstName'].touched}">
+                    <span *ngIf="playerForm.controls['firstName'].invalid && playerForm.controls['firstName'].touched"
+                        class="error-message">Campo no válido</span>
+                </div>
+            </div>
+            <div class="d-flex-evenly mb-3">
+                <div class="d-flex-column">
+                    <label for="player-image">Imagen:</label>
+                    <input type="text" class="input" id="player-image" formControlName="image"
+                        [ngClass]="{'invalid-input': playerForm.controls['firstName'].invalid && playerForm.controls['firstName'].touched}">
+                    <span *ngIf="playerForm.controls['firstName'].invalid && playerForm.controls['firstName'].touched"
+                        class="error-message">Campo no válido</span>
+                </div>
+                <div class="d-flex-column">
+                    <label for="player-position">Posición:</label>
+                    <select class="input" style="width: 190px;" name="player-position" id="player-position"
+                        formControlName="idPosition"
+                        [ngClass]="{'invalid-input': playerForm.controls['firstName'].invalid && playerForm.controls['firstName'].touched}">
+                        <option *ngFor="let position of positions" [value]="position.id">{{position.description}}
+                        </option>
+                    </select>
+                    <span *ngIf="playerForm.controls['firstName'].invalid && playerForm.controls['firstName'].touched"
+                        class="error-message">Campo no válido</span>
+                </div>
+            </div>
+            <div class="sliders">
+                <app-slider [label]="'Ataque'" formControlName="attack"></app-slider>
+                <app-slider [label]="'Defensa'" formControlName="defense"></app-slider>
+                <app-slider [label]="'Skills'" formControlName="skills"></app-slider>
+            </div>
+            <div class="button-area mt-3">
+                <button class="button" (click)="onSubmit()">{{playerToEdit ? 'Editar' : 'Agregar'}}</button>
+            </div>
+        </form>
+    </div>
+</div>
