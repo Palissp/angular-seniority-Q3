@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="overlay-container">
+      <img class="player-img" [src]="player.image" alt="PlayerImage" style="width:100%">
+      <div class="overlay">{{player.firstName + ' ' + player.lastName}}</div>
+  </div>
+  <div class="card-content">
+      <div class="d-flex-evenly h-20">
+          <p>Ataque</p>
+          <p>Defensa</p>
+          <p>Skills</p>
+      </div>
+      <div class="d-flex-evenly">
+          <h2><b>{{player.attack}}</b></h2>
+          <h2><b>{{player.defense}}</b></h2>
+          <h2><b>{{player.skills}}</b></h2>
+      </div>
+      <div class="d-flex-evenly mb-3">
+          <img class="icon" src="../assets/delete-icon.svg" (click)="onDelete()" />
+          <img class="icon" src="../assets/edit-icon.svg" (click)="onEdit()" />
+      </div>
+  </div>
+</div>

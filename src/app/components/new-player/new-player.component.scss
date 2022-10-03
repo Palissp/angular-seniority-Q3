@@ -1,0 +1,38 @@
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.player-image{
+  max-width: 49%;
+}
+
+.player-form{
+  width: 49%;
+}
+
+.sliders{
+  width: 80%;
+  margin: auto;
+  padding-left: 5%;
+}
+
+.button-area{
+  text-align: center;
+}
+
+.invalid-input{
+  border-color: red;
+  border-width: 1px;
+}
+
+.error-message{
+  color: red;
+}
+
+.closeBtn{
+  cursor: pointer;
+}
