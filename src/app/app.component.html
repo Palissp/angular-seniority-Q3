@@ -1,0 +1,91 @@
+<div class="contenedor">
+<h1>MI EQUIPO</h1>
+
+<div class="cabecera">
+    
+        <div class="columna">
+            <input class="input" type="text" name="buscar" placeholder="Buscar por nombre" [(ngModel)]="busquedaNombre">
+        </div>
+        <div class="columna">
+            <button class="button" (click)="addPlayer()">Agregar</button>
+        </div>
+        
+    
+</div>
+
+<div >
+    <div class="d-flex-between c-gap" *ngFor="let player of players | filtroPorNombre:busquedaNombre  let i=index">
+
+        <app-player-card  [player]="player"></app-player-card>
+
+        <!--<div class="cuerpo-foto">
+            <img width="360px" height="360px" src={{player.image}}>
+        </div>
+        <div>
+            <p align="center">{{player.firstName}}</p>
+            <div class="caracteristicas">
+            <div>
+                Ataque
+            </div>
+            <div>
+                Defensa
+            </div>
+            <div>
+                skills
+            </div>
+            </div>
+
+        <div class="controles">
+            <button  (click)="editPlayer(player)"><img height ="15"src="../assets/edit-icon.svg" /></button>
+            <button  (click)="deletePlayer(player)"><img height ="15" src="../assets/delete-icon.svg" /></button>
+        </div>
+    </div>-->
+</div>
+
+
+<div *ngIf="nuevo">
+    <div class="subcontenedor">
+        <form [formGroup]="playerForm" (ngSubmit)="submitPlayer()" >
+            <h2 class="h1" align="center">Nuevo Personaje</h2>
+            <div class="datos">
+                <div class ="label">
+                    <label for="name" class="form-label">Nombre:</label>
+                </div>
+                <div>
+                    <input type="text" name="nombre" class="form-control input-text-ingreso" placeholder="Nombre" formControlName="firstName">
+                </div>
+                <div class ="label">
+                    <label for="descripcion" class="form-label">Descripción:</label>
+                </div>
+                <div>
+                    <input type="text" name="nombre" class="form-control input-text-ingreso" placeholder="Apellido" formControlName="lastName">
+                </div>
+                <div class ="label">
+                    <label for="imagen" class="form-label">Imagen:</label>
+                </div>
+                <div>
+                    <input type="text" name="url" class="form-control input-text-ingreso" placeholder="URL" formControlName="image">
+                </div>
+                <div class ="label">
+                    <label for="imagen" class="form-label">Posiciónn</label>
+                </div>
+                <div>
+                    <input type="text" name="url" class="form-control input-text-ingreso" placeholder="URL" formControlName="idPosition">
+                </div>
+            </div>
+            <div class="controles">
+                <button type="submit" class="button" >Guardar</button>
+                <button class="button" (click)="nuevo=false">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<app-slider [label]="'Puntaje'"></app-slider>
+<img src="../assets/delete-icon.svg" />
+<img src="../assets/edit-icon.svg" />
+<img src="../assets/close-icon.svg" />
+
+</div>
+<app-player-modal class="modal" id="newPlayer"></app-player-modal>
